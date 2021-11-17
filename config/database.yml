@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: sharepets_development
+  database: share_pets_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: sharepets_test
+  database: share_pets_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: sharepets_production
-  username: sharepets
-  password: <%= ENV['SHAREPETS_DATABASE_PASSWORD'] %>
+  database: share_pets_production
+  username: share_pets
+  password: <%= ENV['share_pets_DATABASE_PASSWORD'] %>
