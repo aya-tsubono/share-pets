@@ -19,6 +19,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_user_detail
   end
  
+
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:nickname, :email, :password, :full_name, :full_name_kana, :prefecture_id, :phone_number)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
