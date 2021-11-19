@@ -19,12 +19,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_user_detail
   end
  
+  def create_user_detail
+    @user = User.new(session["devise.regist_data"]["user"])
+    @user_detail = UserDetail.new(user_detail_params)
+     unless @user_detail.valid?
+       render :new_user_detail and return
+     end
+    @user.build_user_detail(@user_detail.attributes)
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+  end
 
   private
 
   def sign_up_params
     params.require(:user).permit(:nickname, :email, :password, :full_name, :full_name_kana, :prefecture_id, :phone_number)
   end
+
+   
+  def user_detail_params
+    params.require(:user_detail).permit(:birthday, :household_id, :experience, :have_animal, :pet_friendly_id, :desired_animal, :economic_status, :deposit, :have_surgery_id, :get_vaccine_id, :indoor_outdoor, :visit_id, :consent_id, :remarks)
+  end
+
 
   # GET /resource/sign_up
   # def new
