@@ -58,7 +58,7 @@
     <div class='form-text-wrap'>
       <label class="form-text">現在の住居について</label>
     </div>
-     <%= f.collection_select(:pet_froendly_id, PetFriendly.all, :id, :name, {}, {class:"select-box", id:"pet-friendly"}) %>
+     <%= f.collection_select(:pet_friendly_id, PetFriendly.all, :id, :name, {}, {class:"select-box", id:"pet-friendly"}) %>
   </div>
   <div class="form-group">
         <div class='form-text-wrap'>
