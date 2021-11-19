@@ -4,12 +4,21 @@
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
-      詳細登録
+      譲渡に関する情報登録画面
     </h1>
   </div>
 
   <%= render 'shared/error_messages', model: f.object %>
 
+  <div class="form-group">
+    <p class='form-info-header'>
+      ご確認
+    </p>
+    <p class='form-info-text'>
+      安心・安全にご利用いただくために、<br>
+      ペット譲渡に関する詳細な情報の登録にご協力ください。
+    </p>
+  </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">生年月日</label>
@@ -27,14 +36,7 @@
                     end_year: (Time.now.year - 5),
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-  </div>
-  <div class="form-group">
-    <p class='form-info-header'>
-      ご確認
-    </p>
-    <p class='form-info-text'>
-      安心・安全にご利用いただくために、お客さまの詳細情報の登録にご協力ください。
-    </p>
+    </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -112,9 +114,9 @@
         <div class='form-text-wrap'>
           <label class="form-text">備考</label>
         </div>
-        <%= f.text_field :remarks, class:"input-default", id:"remarks", placeholder:"記載したいことがありましたらこちらにご記入ください。",maxlength:"500"%>
+        <%= f.text_field :remarks, class:"input-default", id:"remarks", placeholder:"何か記載したいことがございましたら、こちらにご記入ください。",maxlength:"500"%>
   </div>
-
+<br><br>
   <div class="form-group">
     <h2 class='form-bottom-text'>
       下記ボタンを押すと、登録が完了します。
