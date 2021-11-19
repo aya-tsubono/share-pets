@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_145333) do
+ActiveRecord::Schema.define(version: 2021_11_19_090415) do
 
   create_table "user_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "bithday", null: false
+    t.date "birthday", null: false
     t.integer "household_id"
     t.string "experience"
     t.string "have_animal"
