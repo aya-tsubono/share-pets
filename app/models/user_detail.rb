@@ -11,11 +11,11 @@ class UserDetail < ApplicationRecord
   belongs_to :visit
   belongs_to :consent
 
-  validates :household_id,    numericality: { other_than: 1, message: "can't be blank" }
-  validates :pet_friendly_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :have_surgery_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :get_vaccine_id,  numericality: { other_than: 1, message: "can't be blank" }
-  validates :visit_id,        numericality: { other_than: 1, message: "can't be blank" }
-  validates :consent_id,      numericality: { other_than: 1, message: "can't be blank" }
+  validates :household_id,    inclusion: { in: 1..4 }
+  validates :pet_friendly_id, inclusion: { in: 1..4 }
+  validates :have_surgery_id, inclusion: { in: 1..3 }
+  validates :get_vaccine_id,  inclusion: { in: 1..3 }
+  validates :visit_id,        inclusion: { in: 1..3 }
+  validates :consent_id,      inclusion: { in: 1..5 }
 
 end
