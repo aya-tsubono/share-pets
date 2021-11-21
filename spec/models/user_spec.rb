@@ -6,7 +6,7 @@ require 'rails_helper'
 
   describe "ユーザー新規登録" do
     context '登録できる場合' do
-      it '必要な項目全て存在すれば登録できる' do
+      it '全ての項目を正しく入力すれば登録できる' do
         expect(@user).to be_valid
       end
     end
