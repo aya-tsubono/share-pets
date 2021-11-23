@@ -48,20 +48,6 @@ git cloneしてから、ローカルで動作をさせるまでに必要なコ�
 | full_name_kana     | string  | null: false               |
 | prefecture_id      | integer | null: false               |
 | phone_number       | string  | null: false               |
-| birthday           | date    |                           |
-| household_id       | integer |                           |
-| experience         | string  |                           |
-| have_animal        | string  |                           |
-| pet_friendly_id    | integer |                           |
-| desired_animal     | text    |                           |
-| economic_status    | string  |                           |
-| deposit            | string  |                           |
-| have_surgery_id    | integer |                           |
-| get_vaccine_id     | integer |                           |
-| indoor_outdoor     | string  |                           |
-| visit_id           | integer |                           |
-| consent_id         | integer |                           |
-| remarks            | text    |                           |
 
 ### Association
 
@@ -70,6 +56,32 @@ git cloneしてから、ローカルで動作をさせるまでに必要なコ�
 - has_many :rooms, through: :room_users
 - has_many :adoptions
 - has_many :messages
+- has_one  :user_detail
+
+
+## user_details テーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| birthday           | date       | null: false                    |
+| household_id       | integer    |                                |
+| experience         | string     |                                |
+| have_animal        | string     |                                |
+| pet_friendly_id    | integer    |                                |
+| desired_animal     | text       |                                |
+| economic_status    | string     |                                |
+| deposit            | string     |                                |
+| have_surgery_id    | integer    |                                |
+| get_vaccine_id     | integer    |                                |
+| indoor_outdoor     | string     |                                |
+| visit_id           | integer    |                                |
+| consent_id         | integer    |                                |
+| remarks            | text       |                                |
+| user_id            | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
 
 
 ## pets テーブル

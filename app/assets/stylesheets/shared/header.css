@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.furima-icon {
+.pet-icon {
   width: 10vw;
   margin-right: 10vw;
 }
@@ -37,7 +37,9 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color: yellowgreen;
+  color: #ffffff;
+  border: 1px olive solid ;
   padding: 8px;
 }
 
@@ -46,7 +48,7 @@
 }
 
 .nav {
-  font-size: 18px;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -66,11 +68,6 @@
   color: #333333;
 }
 
-.brand-list {
-  text-decoration: none;
-  color: #333333;
-}
-
 .lists-right {
   display: flex;
   list-style: none;
@@ -81,24 +78,30 @@
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
+  color: yellowgreen;
   font-weight: bold;
 }
 
-
 .logout {
   text-decoration: none;
-  color: #333333;
+  color: yellowgreen;
+  font-weight: bold;
+  padding: 6px;
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: yellowgreen;
+  font-weight: bold;
 }
 
 .sign-up {
+  padding: 10px;
   text-decoration: none;
-  color: #333333;
+  color: #ffffff;
+  background-color: yellowgreen;
+  border: 1px olive solid ;
+  font-weight: bold;
 }
