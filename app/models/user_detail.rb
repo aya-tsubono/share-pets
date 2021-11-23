@@ -17,5 +17,4 @@ class UserDetail < ApplicationRecord
   validates :get_vaccine_id,  inclusion: { in: 1..3 }
   validates :visit_id,        inclusion: { in: 1..3 }
   validates :consent_id,      inclusion: { in: 1..5 }
-
 end

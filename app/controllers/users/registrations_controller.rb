@@ -10,33 +10,31 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(sign_up_params)
-     unless @user.valid?
-       render :new and return
-     end
-    session["devise.regist_data"] = {user: @user.attributes}
-    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    render :new and return unless @user.valid?
+
+    session['devise.regist_data'] = { user: @user.attributes }
+    session['devise.regist_data'][:user]['password'] = params[:user][:password]
     @user_detail = @user.build_user_detail
     render :new_user_detail
   end
- 
+
   def create_user_detail
-    @user = User.new(session["devise.regist_data"]["user"])
+    @user = User.new(session['devise.regist_data']['user'])
     @user_detail = UserDetail.new(user_detail_params)
-     unless @user_detail.valid?
-       render :new_user_detail and return
-     end
+    render :new_user_detail and return unless @user_detail.valid?
+
     @user.build_user_detail(@user_detail.attributes)
     @user.save
-    session["devise.regist_data"]["user"].clear
+    session['devise.regist_data']['user'].clear
     sign_in(:user, @user)
   end
 
   private
 
   def user_detail_params
-    params.require(:user_detail).permit(:birthday, :household_id, :experience, :have_animal, :pet_friendly_id, :desired_animal, :economic_status, :deposit, :have_surgery_id, :get_vaccine_id, :indoor_outdoor, :visit_id, :consent_id, :remarks)
+    params.require(:user_detail).permit(:birthday, :household_id, :experience, :have_animal, :pet_friendly_id, :desired_animal,
+                                        :economic_status, :deposit, :have_surgery_id, :get_vaccine_id, :indoor_outdoor, :visit_id, :consent_id, :remarks)
   end
-
 
   # GET /resource/sign_up
   # def new

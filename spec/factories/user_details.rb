@@ -5,7 +5,7 @@ FactoryBot.define do
     experience       { Faker::Lorem.sentence }
     have_animal      { Faker::Lorem.sentence }
     pet_friendly_id  { Faker::Number.between(from: 2, to: 4) }
-    desired_animal   { Faker::Lorem.sentences } 
+    desired_animal   { Faker::Lorem.sentences }
     economic_status  { Faker::Lorem.sentence }
     deposit          { Faker::Lorem.sentence }
     have_surgery_id  { Faker::Number.between(from: 2, to: 3) }
