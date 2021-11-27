@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_090415) do
+ActiveRecord::Schema.define(version: 2021_11_27_151648) do
+
+  create_table "pets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "animal_name", null: false
+    t.integer "animal_category_id", null: false
+    t.string "breed", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "sex_id", null: false
+    t.integer "age_id", null: false
+    t.integer "weight_id", null: false
+    t.text "reason", null: false
+    t.text "area", null: false
+    t.integer "vaccination_id", null: false
+    t.integer "castration_id", null: false
+    t.integer "charge", null: false
+    t.text "condition", null: false
+    t.text "status", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pets_on_user_id"
+  end
 
   create_table "user_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "birthday", null: false
@@ -50,5 +72,6 @@ ActiveRecord::Schema.define(version: 2021_11_19_090415) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pets", "users"
   add_foreign_key "user_details", "users"
 end
