@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'pets/index'
   root to: 'pets#index'
 
-  resources :pets, only: [:new]
+  resources :pets, only: [:new, :create]
 end
