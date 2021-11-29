@@ -7,4 +7,8 @@ class PetsController < ApplicationController
     @pet = Pet.new
   end
 
+  def create
+
+  end
+  
 end
