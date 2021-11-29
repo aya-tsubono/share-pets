@@ -30,7 +30,7 @@
         タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"pets-text", id:"pet-title", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
+      <%= f.text_area :title, class:"pets-text", id:"pet-title", placeholder:"タイトル", maxlength:"40" %>
         <div class="weight-bold-text">
           ペットの名前
           <span class="indispensable">必須</span>
@@ -77,7 +77,7 @@
         </div>
         <%= f.collection_select(:weight_id, [], :id, :name, {}, {class:"select-box", id:"pet-weight"}) %>
         <div class="weight-bold-text">
-          譲渡条件
+          ペットの状態
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :status, class:"pets-text", id:"pet-status", placeholder:"健康状態、性格など" ,maxlength:"1000" %>
@@ -118,7 +118,7 @@
           譲渡費用
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :charge, class:"pets-text", id:"pet-charge", placeholder:"譲渡時にかかる費用の概算" ,maxlength:"200" %>
+        <%= f.text_area :charge, class:"pets-text", id:"pet-charge", placeholder:"譲渡時にかかる費用の概算" %>
         <div class="weight-bold-text">
           譲渡条件
           <span class="indispensable">必須</span>
