@@ -5,7 +5,7 @@
   </header>
   <div class="pets-main">
     <h2 class="pets-title">ペットの登録</h2>
-    <%= form_with model: @pet, url: new_pet_path, local: true do |f| %>
+    <%= form_with model: @pet, url: pets_path, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -130,8 +130,8 @@
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "投稿する", class:"sell-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
