@@ -4,7 +4,7 @@
 
   </header>
   <div class="pets-main">
-    <h2 class="pets-title">ペットの情報を登録</h2>
+    <h2 class="pets-title">ペットの登録</h2>
     <%= form_with model: @pet, url: new_pet_path, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -47,7 +47,7 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:animal_category_id, [], :id, :name, {}, {class:"select-box", id:"pet-category"}) %>
+        <%= f.collection_select(:animal_category_id, AnimalCategory.all, :id, :name, {}, {class:"select-box", id:"pet-category"}) %>
         <div class="weight-bold-text">
           種類
           <span class="indispensable">必須</span>
@@ -65,17 +65,17 @@
           性別
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:sex_id, [], :id, :name, {}, {class:"select-box", id:"pet-sex"}) %>
+        <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"pet-sex"}) %>
         <div class="weight-bold-text">
           年齢
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:age_id, [], :id, :name, {}, {class:"select-box", id:"pet-age"}) %>
+        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"pet-age"}) %>
         <div class="weight-bold-text">
           大きさ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:weight_id, [], :id, :name, {}, {class:"select-box", id:"pet-weight"}) %>
+        <%= f.collection_select(:weight_id, Weight.all, :id, :name, {}, {class:"select-box", id:"pet-weight"}) %>
         <div class="weight-bold-text">
           ペットの状態
           <span class="indispensable">必須</span>
@@ -85,17 +85,17 @@
           居住地
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefecture_id, [], :id, :name, {}, {class:"select-box", id:"pet-prefecture"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"pet-prefecture"}) %>
         <div class="weight-bold-text">
           ワクチン接種について
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:vaccination_id, [], :id, :name, {}, {class:"select-box", id:"pet-vaccination"}) %>
+        <%= f.collection_select(:vaccination_id, Vaccination.all, :id, :name, {}, {class:"select-box", id:"pet-vaccination"}) %>
         <div class="weight-bold-text">
           避妊去勢手術について
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:castration_id, [], :id, :name, {}, {class:"select-box", id:"pet-castration"}) %>
+        <%= f.collection_select(:castration_id, Castration.all, :id, :name, {}, {class:"select-box", id:"pet-castration"}) %>
       </div>
       </div>
     <%# /詳細 %>
