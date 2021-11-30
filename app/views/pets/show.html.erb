@@ -1,0 +1,131 @@
+<%= render "shared/header" %>
+
+<%# 概要 %>
+<div class="pet-show">
+  <div class="pet-box">
+    <h2 class="name">
+      <%= "タイトル" %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag message.image, class:"item-box-img" %>
+      <%# 商品が売れている場合は、sold outを表示しましょう %>
+      <div class="sold-out">
+        <span>里親決定!!</span>
+      </div>
+      <%# //商品が売れている場合は、sold outを表示しましょう %>
+    </div>
+    <div class="pet-name-box">
+      <span class="pet-name">
+        <%= "animal_name"ちゃん %>
+        <%= "sex""age" %>
+      </span>
+    </div>
+
+    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+
+    <%= link_to "編集", "#", method: :get, class: "pet-green-btn" %>
+    <p class="or-text">or</p>
+    <%= link_to "削除", "#", method: :delete, class:"pet-destroy" %>
+
+    <%# 商品が売れていない場合はこちらを表示しましょう %>
+    <%= link_to "譲渡希望画面に進む", "#" ,class:"pet-green-btn"%>
+    <%# //商品が売れていない場合はこちらを表示しましょう %>
+
+
+    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+
+    <div class="pet-explain-box">
+      <span><%= "ペットの詳細" %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= "投稿者名" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">犬種・猫種</th>
+          <td class="detail-value"><%= "breed" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">性別</th>
+          <td class="detail-value"><%= "sex_id.name" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">年齢</th>
+          <td class="detail-value"><%= "age_id.name" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">大きさ</th>
+          <td class="detail-value"><%= "weight_id.name" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">居住地</th>
+          <td class="detail-value"><%= "prefecture" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ワクチン接種</th>
+          <td class="detail-value"><%= "vaccination" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">避妊去勢</th>
+          <td class="detail-value"><%= "castration" %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pet-explain-box">
+      <span><%= "譲渡の詳細" %></span>
+    </div>
+        <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">募集地域</th>
+          <td class="detail-value"><%= "area" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">譲渡費用</th>
+          <td class="detail-value"><%= "charge" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">譲渡理由</th>
+          <td class="detail-value"><%= "reason" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">譲渡条件</th>
+          <td class="detail-value"><%= "condition" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">健康状態や性格などの詳細</th>
+          <td class="detail-value"><%= "status" %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な商品の通報</span>
+      </div>
+    </div>
+  </div>
+  <%# /概要 %>
+
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+</div>
+
+<%= render "shared/footer" %>
