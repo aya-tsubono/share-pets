@@ -1,6 +1,7 @@
 class Pet < ApplicationRecord
   belongs_to :user
-
+  has_one_attached :image
+  
   validates :title,       presence: true, length: { maximum: 40 }
   validates :animal_name, presence: true, length: { maximum: 20 }
   validates :breed,       presence: true, length: { maximum: 50 }
