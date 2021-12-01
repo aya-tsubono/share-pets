@@ -9,8 +9,8 @@
     </div>
     <ul class='item-lists'>
     
-      <%# if @pets.length > 0 %>
-      <%# @pets.each do |item| %> 
+      <% if @pets.length > 0 %>
+      <% @pets.each do |item| %> 
       <li class='list'>
       <%= link_to '#' do %>
         <div class='pet-img-content'>
@@ -26,10 +26,10 @@
 
         <div class='item-info'>
           <h3 class='item-name'>
-            <%# pet.title %>
+            <%# @pet.title %>
           </h3>
           <div class='item-price'>
-            <span><%# item.price %>円<br><%# item.delivery_fee.name %></span>
+            <span><%# pet.breed %>円<br><%# pet.sex.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
@@ -38,8 +38,8 @@
         </div>
       <% end %>
       </li>
-      <%# end %>
-      <%# end %>
+      <% end %>
+      <% end %>
     
       <%# if @items.length == 0 %>
         <li class='list'>
