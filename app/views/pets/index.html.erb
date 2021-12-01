@@ -10,26 +10,27 @@
     <ul class='item-lists'>
     
       <% if @pets.length > 0 %>
-      <% @pets.each do |item| %> 
+      <% @pets.each do |pet| %> 
       <li class='list'>
       <%= link_to '#' do %>
         <div class='pet-img-content'>
-          <%= image_tag('sample.jpg', class: "item-img") %>
+          <%= image_tag pet.image, class: "pet-img" %>
 
-          <%# if item.buying_history.present? %>
-          <%# <div class='sold-out'>
+          <%# if pet.adoption.present? %>
+          <div class='sold-out'>
             <span>譲渡決定！</span>
-          </div>%>
+          </div>
           <%# end %>
 
         </div>
 
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%# @pet.title %>
+        <div class='pet-info'>
+          <h3 class='pet-title'>
+            <%= pet.title %>
           </h3>
-          <div class='item-price'>
-            <span><%# pet.breed %>円<br><%# pet.sex.name %></span>
+          <div class='pet-name'>
+            <span><%= pet.animal_name %> ちゃん<br>
+            <%= pet.breed %> / <%= pet.sex.name %> / <%= pet.age.name %></span>
           </div>
         </div>
       <% end %>
@@ -37,21 +38,21 @@
       <% end %>
       <% end %>
     
-      <%# if @items.length == 0 %>
+      <% if @pets.length == 0 %>
         <li class='list'>
         <%= link_to '#' do %>
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <%= image_tag "chopper.png", class: "pet-img" %>
+        <div class='pet-info'>
+          <h3 class='pet-title'>
             投稿してね！
           </h3>
-          <div class='item-price'>
-            <span>999999円<br>(税込み)</span>
+          <div class='pet-name'>
+            <span>チョッパー ちゃん<br>雑種 / オス / ３歳〜６歳</span>
           </div>
         </div>
         <% end %>
         </li>
-      <%# end %>
+      <% end %>
     </ul>
   </div>
   <%# //投稿一覧 %>
