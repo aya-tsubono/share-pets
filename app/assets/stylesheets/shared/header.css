@@ -89,6 +89,16 @@
   padding: 6px;
 }
 
+.post-btn {
+  padding: 10px;
+  margin-left: 3vw;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: yellowgreen;
+  border: 1px olive solid ;
+  font-weight: bold;
+}
+
 .login {
   text-decoration: none;
   line-height: 32px;
