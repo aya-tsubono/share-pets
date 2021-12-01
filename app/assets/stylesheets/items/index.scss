@@ -45,61 +45,44 @@ a {
 }
 
 
-.item-img-content {
+.pet-img-content {
   position: relative;
 }
 
-.item-img {
+.pet-img {
   width: 33vh;
   height: 33vh;
 }
 
 .sold-out {
   position: absolute;
-  top: 40%;
+  top: 70%;
   width: 100%;
   text-align: center;
   background-color: darkorange;
-  transform: skewY(-10deg);
 }
 
 .sold-out>span {
   color: #FFF;
-  font-size: 45px;
+  font-size: 30px;
   font: bold;
 }
 
-
-.item-info {
+.pet-info {
   background-color: #FFF;
   color: black;
   padding: 1vw;
 }
 
-.item-name {
+.pet-title {
   font-size: 2.5vh;
+  font-weight: bold;
 }
 
-.item-price {
-  font-size: 1.5vh;
+.pet-name {
+  font-size: 1.8vh;
   display: flex;
   justify-content: space-between;
-}
-
-
-.star-btn {
-  display: flex;
-  align-items: center;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
-  margin-right: 0.5vw;
-}
-
-.star-count {
-  font-size: 2vh;
 }
 
 /* //投稿一覧 */
