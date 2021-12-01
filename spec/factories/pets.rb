@@ -11,14 +11,14 @@ FactoryBot.define do
     vaccination_id  { Faker::Number.between(from: 2, to: 4) }
     castration_id  { Faker::Number.between(from: 2, to: 4) }
     area  { Faker::Lorem.sentence }
-    charge  { Faker::Lorem.sentence }
+    charge  { Faker::Number.between(from: 0, to: 9_999_999) }
     condition  { Faker::Lorem.sentences }
     reason  { Faker::Lorem.sentences }
     status  { Faker::Lorem.sentences }
     association :user
 
     after(:build) do |pet|
-      pet.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+      pet.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png', content_type: 'image/png')
     end
 
   end
