@@ -1,20 +1,20 @@
 FactoryBot.define do
   factory :pet do
-    title  {  }
-    animal_name  {  }
-    animal_category_id  {  }
-    breed  {  }
-    sex_id  {  }
-    age_id  {  }
-    weight_id  {  }
-    prefecture_id  {  }
-    vaccination_id  {  }
-    castration_id  {  }
-    area  {  }
-    charge  {  }
-    condition  {  }
-    reason  {  }
-    status  {  }
+    title  { Faker::Lorem.sentence }
+    animal_name  { Faker::Creature::Dog.name }
+    animal_category_id  { Faker::Number.between(from: 2, to: 4) }
+    breed  { Faker::Creature::Dog.breed }
+    sex_id  { Faker::Number.between(from: 2, to: 4) }
+    age_id  { Faker::Number.between(from: 2, to: 5) }
+    weight_id  { Faker::Number.between(from: 2, to: 7) }
+    prefecture_id  { Faker::Number.between(from: 2, to: 48) }
+    vaccination_id  { Faker::Number.between(from: 2, to: 4) }
+    castration_id  { Faker::Number.between(from: 2, to: 4) }
+    area  { Faker::Lorem.sentence }
+    charge  { Faker::Lorem.sentence }
+    condition  { Faker::Lorem.sentences }
+    reason  { Faker::Lorem.sentences }
+    status  { Faker::Lorem.sentences }
     association :user
 
     after(:build) do |pet|
