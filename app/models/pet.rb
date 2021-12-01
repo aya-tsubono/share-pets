@@ -28,5 +28,4 @@ class Pet < ApplicationRecord
   validates :prefecture_id,      presence: true, numericality: { other_than: 1, message: "can't be blank" }
   validates :vaccination_id,     presence: true, numericality: { other_than: 1, message: "can't be blank" }
   validates :castration_id,      presence: true, numericality: { other_than: 1, message: "can't be blank" }
-
 end

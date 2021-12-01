@@ -55,7 +55,7 @@ RSpec.describe Pet, type: :model do
         @pet.vaccination_id = 1
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Vaccination can't be blank")
-      end 
+      end
       it 'castration_idが空では登録できない' do
         @pet.castration_id = 1
         @pet.valid?
