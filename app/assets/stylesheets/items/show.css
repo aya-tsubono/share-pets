@@ -11,7 +11,7 @@
 
 .pet-box {
   background-color: #FFF;
-  width: 70vw;
+  width: 80vw;
   min-width: 1200px;
   padding: 10vh 15vw;
   display: flex;
@@ -40,6 +40,10 @@
   flex-direction: column;
 }
 
+.pet-name {
+  font-size: 20px;
+}
+
 .pet-green-btn {
   text-align: center;
   background-color: yellowgreen;
@@ -64,51 +68,35 @@
 }
 
 .pet-explain-box {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
   margin: 40px 0px;
   overflow-wrap: anywhere;
 }
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
+  width: 90%;
+}
+
+.detail-table2 {
+  margin-bottom: 30px;
+  width: 140%;
 }
 
 .detail-item {
   width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
-  font-size: 14px;
+  background-color: yellowgreen;
+  border: 1px solid olive;
+  font-size: 16px;
   text-align: center;
 }
 
 .detail-value {
   width: 80%;
   padding: 20px;
-  border: 1px solid #dedede;
+  border: 1px solid olive;
   font-size: 14px;
-}
-
-.option {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
 }
 
 .report-btn {
