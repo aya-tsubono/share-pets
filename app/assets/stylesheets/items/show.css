@@ -47,7 +47,7 @@
 .pet-green-btn {
   text-align: center;
   background-color: yellowgreen;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #FFF;
   margin: 20px 0px;
@@ -61,7 +61,8 @@
 .pet-destroy {
   background-color: lightgray;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: bold;
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
@@ -96,24 +97,7 @@
   width: 80%;
   padding: 20px;
   border: 1px solid olive;
-  font-size: 14px;
-}
-
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
+  font-size: 16px;
 }
 
 

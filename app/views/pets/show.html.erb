@@ -23,9 +23,9 @@
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? && (current_user.id == @pet.user_id) %>
-    <%= link_to "編集", "#", method: :get, class: "pet-green-btn" %>
+    <%= link_to "編 集", "#", method: :get, class: "pet-green-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削除", "#", method: :delete, class:"pet-destroy" %>
+    <%= link_to "削 除", "#", method: :delete, class:"pet-destroy" %>
     <% end %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <% if user_signed_in? && (current_user.id != @pet.user_id) %>
@@ -37,7 +37,7 @@
     <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
     <div class="pet-explain-box">
-      <span><%= "ペットの詳細" %></span>
+      <span><%= "詳細情報" %></span>
     </div>
     <table class="detail-table">
       <tbody>
@@ -98,7 +98,7 @@
           <td class="detail-value"><%= @pet.condition %></td>
         </tr>
         <tr>
-          <th class="detail-item">備考・健康状態や性格</th>
+          <th class="detail-item">備考：健康状態や性格など</th>
           <td class="detail-value"><%= @pet.status %></td>
         </tr>
       </tbody>
