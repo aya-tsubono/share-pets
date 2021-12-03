@@ -23,9 +23,9 @@
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? && (current_user.id == @pet.user_id) %>
-    <%= link_to "編 集", "#", method: :get, class: "pet-green-btn" %>
+    <%= link_to "編 集", edit_pet_path, method: :get, class: "pet-green-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削 除", "#", method: :delete, class:"pet-destroy" %>
+    <%= link_to "削 除", pet_path, method: :delete, class:"pet-destroy" %>
     <% end %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <% if user_signed_in? && (current_user.id != @pet.user_id) %>
