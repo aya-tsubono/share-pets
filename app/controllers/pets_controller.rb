@@ -23,14 +23,12 @@ class PetsController < ApplicationController
   end
 
   def edit
-    if @pet.user_id != current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path if @pet.user_id != current_user.id
   end
-  
+
   def update
     if @pet.update(pet_params)
-      redirect_to pet_path      
+      redirect_to pet_path
     else
       render :edit
     end
@@ -51,5 +49,4 @@ class PetsController < ApplicationController
   def set_pet
     @pet = Pet.find(params[:id])
   end
-
 end
