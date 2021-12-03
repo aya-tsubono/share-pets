@@ -33,7 +33,6 @@ class PetsController < ApplicationController
     else
       render :edit
     end
-    end
   end
 
 
