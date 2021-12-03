@@ -5,7 +5,7 @@
   </header>
   <div class="pets-main">
     <h2 class="pets-title">ペットの登録</h2>
-    <%= form_with model: @pet, url: pets_path, local: true do |f| %>
+    <%= form_with model: @pet, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
