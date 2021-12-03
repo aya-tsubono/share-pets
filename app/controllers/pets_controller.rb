@@ -36,6 +36,9 @@ class PetsController < ApplicationController
     end
   end
 
+  def destroy
+
+  end
 
   private
 
