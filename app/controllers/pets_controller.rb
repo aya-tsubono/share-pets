@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_pet, only: [:show, :edit, :update]
+  before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
     @pets = Pet.all.order('created_at DESC')
@@ -37,7 +37,8 @@ class PetsController < ApplicationController
   end
 
   def destroy
-
+    @pet.destroy
+    redirect_to root_path
   end
 
   private
