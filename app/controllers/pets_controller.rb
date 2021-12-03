@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_pet, only: [:show, :edit, :update]
-  
+
   def index
     @pets = Pet.all.order('created_at DESC')
   end
@@ -23,6 +23,11 @@ class PetsController < ApplicationController
   end
 
   def edit
+    if @pet.user_id != current_user.id
+      redirect_to root_path
+    elsif (@pet.user_id == current_user.id) && @pet.adoption.present?
+      redirect_to root_path
+    end
   end
   
   def update
