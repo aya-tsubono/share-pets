@@ -25,8 +25,6 @@ class PetsController < ApplicationController
   def edit
     if @pet.user_id != current_user.id
       redirect_to root_path
-    elsif (@pet.user_id == current_user.id) && @pet.adoption.present?
-      redirect_to root_path
     end
   end
   
