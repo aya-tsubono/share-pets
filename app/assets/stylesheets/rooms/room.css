@@ -1,0 +1,71 @@
+.room-text{
+  font-size: 20px;
+  font-weight: bold;
+}
+.room-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid yellowgreen;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.room-form-errors {
+  margin: 30px 0;
+  padding: 20px 40px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  text-align: center;
+}
+.room-form-label {
+  display: block;
+  line-height: 50px;
+  font-weight: bold;
+  text-align: left;
+}
+.room-form-input {
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.room-green-btn {
+  display: inline-block;
+  padding: 20px 50px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: yellowgreen;
+  border: 0;
+}
+
+.room-form-field {
+  margin-top: 30px;
+}
+.room-form-field:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.room-form-left {
+  float: left;
+  width: 30%;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.room-form-right {
+  float: right;
+  width: 60%;
+}
+
+
+.top-header {
+  background-color: #434a54;
+  height: 80px;
+  width: 100%;
+}
