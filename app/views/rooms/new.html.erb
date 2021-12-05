@@ -1,0 +1,20 @@
+<div class='room-form'>
+  <div class='room-text'>
+    <h1>里親希望を申請しますか？</h1>
+  </div>
+  <%=form_with model: @room, local: true do |f|%>
+    <div class='room-form-field'>
+      <div class='room-form-field-left'>
+        <%= f.label :申請コメント, class: 'room-form-label'%>
+      </div>
+      <div class='room-form-field-right'>
+        <%= f.text_field :name, class: 'room_name room-form-input', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+    </div>
+    <div class='room-form-field'>
+      <div class='room-form-right'>
+        <%= f.submit "申請する", class: 'room-green-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>
