@@ -1,14 +1,14 @@
 <div class='room-form'>
   <div class='room-text'>
-    <h1>里親希望を申請しますか？</h1>
+    <h1>里親申請のための個別チャットルームを作成します</h1>
   </div>
   <%=form_with model: @room, local: true do |f|%>
     <div class='room-form-field'>
       <div class='room-form-field-left'>
-        <%= f.label :申請コメント, class: 'room-form-label'%>
+        <%= f.label :チャットルーム名, class: 'room-form-label'%>
       </div>
       <div class='room-form-field-right'>
-        <%= f.text_field :name, class: 'room_name room-form-input', placeholder: 'チャットルーム名を入力してください'%>
+        <%= f.text_field :room_name, class: 'room_name room-form-input', placeholder: '〇〇ちゃん里親希望 (名前)'%>
       </div>
     </div>
     <div class='room-form-field'>
