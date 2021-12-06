@@ -12,15 +12,17 @@
       </div>
     </div><div class='room-form-field'>
       <div class='room-form-field-left'>
-        <label class='room-form-label' for='chat_room_チャットメンバー'>申請先</label>
+        <label class='room-form-label' for='chat_room_チャットメンバー'>申請するユーザー</label>
       </div>
       <div class='room-form-field-right'>
+      <div class='room-form-pulldown'>
         <select name="room[user_ids][]">
-          <option value="">下記ユーザーに申請を送ります</option>
+          <option value="">ユーザーを選択してください</option>
           <% User.where.not(id: current_user.id).each do |user| %>
             <option value=<%= user.id %>><%= user.nickname %></option>
           <% end %>
         </select>
+        </div>
       </div>
     </div>
     <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>

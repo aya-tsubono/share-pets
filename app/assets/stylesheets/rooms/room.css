@@ -20,8 +20,9 @@
 }
 .room-form-label {
   display: block;
-  line-height: 50px;
+  line-height: 60px;
   font-weight: bold;
+  font-size: 20px;
   text-align: left;
 }
 .room-form-input {
@@ -62,10 +63,6 @@
   float: right;
   width: 60%;
 }
-
-
-.top-header {
-  background-color: #434a54;
-  height: 80px;
-  width: 100%;
+.room-form-pulldown {
+  font-size: 20px;
 }
