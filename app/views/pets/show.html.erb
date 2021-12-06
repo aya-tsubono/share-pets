@@ -29,7 +29,7 @@
     <% end %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <% if user_signed_in? && (current_user.id != @pet.user_id) %>
-    <%= link_to "譲渡希望申請をする", new_room_path ,class:"pet-green-btn"%>
+    <%= link_to "里親を希望する", new_room_path(@pet), class:"pet-green-btn" %>
     <% end %>
     <%# //商品が売れていない場合はこちらを表示しましょう %>
 
