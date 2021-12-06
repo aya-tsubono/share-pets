@@ -1,6 +1,6 @@
 <div class='room-form'>
   <div class='room-text'>
-    <h1>里親申請のための個別チャットルームを作成します</h1>
+    <h1>下記ユーザーに里親申請をします</h1>
   </div>
   <%=form_with model: @room, local: true do |f|%>
     <div class='room-form-field'>
@@ -10,7 +10,20 @@
       <div class='room-form-field-right'>
         <%= f.text_field :room_name, class: 'room_name room-form-input', placeholder: '〇〇ちゃん里親希望 (名前)'%>
       </div>
+    </div><div class='room-form-field'>
+      <div class='room-form-field-left'>
+        <label class='room-form-label' for='chat_room_チャットメンバー'>申請先</label>
+      </div>
+      <div class='room-form-field-right'>
+        <select name="room[user_ids][]">
+          <option value="">下記ユーザーに申請を送ります</option>
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=<%= user.id %>><%= user.nickname %></option>
+          <% end %>
+        </select>
+      </div>
     </div>
+    <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
     <div class='room-form-field'>
       <div class='room-form-right'>
         <%= f.submit "申請する", class: 'room-green-btn'%>
