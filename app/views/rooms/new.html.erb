@@ -3,6 +3,9 @@
     <h1>下記ユーザーに里親申請をします</h1>
   </div>
   <%=form_with model: @room, local: true do |f|%>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
     <div class='room-form-field'>
       <div class='room-form-field-left'>
         <%= f.label :チャットルーム名, class: 'room-form-label'%>
