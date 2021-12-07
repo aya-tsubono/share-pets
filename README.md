@@ -114,9 +114,9 @@ git cloneしてから、ローカルで動作をさせるまでに必要なコ�
 
 ## rooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column      | Type   | Options     |
+| ----------- | ------ | ----------- |
+| room_name   | string | null: false |
 
 ### Association
 
@@ -145,7 +145,7 @@ git cloneしてから、ローカルで動作をさせるまでに必要なコ�
 | ------------------ | ---------- | ------------------------------ |
 | content            | string     |                                |
 | user               | references | null: false, foreign_key: true |
-| pet                | references | null: false, foreign_key: true |
+| room               | references | null: false, foreign_key: true |
 
 ### Association
 
