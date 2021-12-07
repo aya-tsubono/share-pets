@@ -24,7 +24,7 @@
                     <mxGeometry y="250" width="200" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="messages テーブル" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=18;strokeWidth=2;strokeColor=#000000;fillColor=#FFFFFF;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="90" width="200" height="110" as="geometry">
+                    <mxGeometry x="270" y="570" width="200" height="110" as="geometry">
                         <mxRectangle x="40" y="140" width="60" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
