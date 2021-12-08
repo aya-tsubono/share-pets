@@ -1,0 +1,76 @@
+<%= render "shared/header" %>
+
+<div class="message-main">
+
+ <%# サイドバー %>
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="header-name">
+        <%= link_to current_user.name, '#' %>
+      </div>
+    </div>
+
+    <div class="rooms">
+      <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to 'ルーム名', '#' %>
+        </div>
+      </div>
+      <% end %>
+      </div>
+    </div>
+  <%# //サイドバー %>
+
+  <%# チャット画面 %>
+  <div class="chat">
+    <div class="chat-header">
+      <div class="left-header">
+        <div class="header-title">
+          <%= 'ルーム名' %>
+        </div>
+      </div>
+      <div class="right-header">
+        <div class="header-button">
+          <%= link_to "チャットを終了する", '#', method: :delete %>
+        </div>
+      </div>
+    </div>
+
+  <%# メッセージ %>
+  <div class="messages">
+    <div class="message">
+      <div class="upper-message">
+        <div class="message-user">
+  <!-- 投稿したユーザー名情報を出力する -->
+          <%= 'message.user.name' %>
+        </div>
+      <div class="message-date">
+  <!-- 投稿した時刻を出力する -->
+        <%= l message.created_at %>
+      </div>
+      </div>
+      <div class="lower-message">
+        <div class="message-content">
+  <!-- 投稿したメッセージ内容を記述する -->
+        <%= 'message.content' %>
+        </div>
+        <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+      </div>
+    </div>
+  </div>
+
+    <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+      <div class="form-input">
+        <%= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力してください' %>
+        <label class="form-image">
+        <span class="image-file">画像</span>
+        <%= f.file_field :image?, class: 'hidden' %>
+        </label>
+      </div>
+      <%= f.submit '送信', class: 'form-submit' %>
+    <% end %>
+  </div>
+  <%# //チャット画面 %>
+
+</div>
