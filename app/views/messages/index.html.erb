@@ -28,11 +28,16 @@
       <div class="left-header">
         <div class="header-title">
           <%= @room.room_name %>
+          <%= link_to "投稿ページを見る", '#' %>
         </div>
       </div>
       <div class="right-header">
         <div class="header-button">
-          <%= link_to "里親決定", '#' %>
+          <% if user_signed_in? && (current_user.id == @pet.user_id) %>
+            <%= link_to "里親決定", '#' %>
+          <% end %>
+          <%= link_to "投稿者のプロフィール", '#' %>
+          <%= link_to "里親希望者のプロフィール", '#' %>
         </div>
       </div>
     </div>
