@@ -17,6 +17,11 @@ RSpec.describe Room, type: :model do
         @room.valid?
         expect(@room.errors.full_messages).to include("Room name can't be blank")
       end
+      it "room_nameが40文字以上だと保存できない" do
+        @room.room_name = 'a' * 41
+        @room.valid?
+        expect(@room.errors.full_messages).to include("Room name is too long (maximum is 40 characters)")
+      end
     end
   end
 end
