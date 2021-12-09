@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :index]
 
   def index
     @message = Message.new
