@@ -6,7 +6,7 @@
   <div class="side-bar">
     <div class="side-bar-header">
       <div class="header-name">
-        <%= link_to current_user.name, '#' %>
+        <%= link_to current_user.nickname, '#' %>
       </div>
     </div>
 
@@ -14,7 +14,7 @@
       <% current_user.rooms.each do |room| %>
       <div class="room">
         <div class="room-name">
-          <%= link_to @room.name, '#' %>
+          <%= link_to @room.room_name, '#' %>
         </div>
       </div>
       <% end %>
@@ -27,7 +27,7 @@
     <div class="chat-header">
       <div class="left-header">
         <div class="header-title">
-          <%= @room.name %>
+          <%= @room.room_name %>
         </div>
       </div>
       <div class="right-header">
@@ -42,7 +42,7 @@
     <div class="message">
       <div class="upper-message">
         <div class="message-user">
-          <%= message.user.name %>
+          <%= message.user.nickname %>
         </div>
         <div class="message-date">
           <%= l message.created_at %>
