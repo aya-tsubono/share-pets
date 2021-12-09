@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :massage do
+  factory :message do
     content {Faker::Lorem.sentence}
     association :user
     association :room

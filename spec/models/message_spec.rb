@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Massage, type: :model do
+RSpec.describe Message, type: :model do
   before do
     @message = FactoryBot.build(:message)
   end

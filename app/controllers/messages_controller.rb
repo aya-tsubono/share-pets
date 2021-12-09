@@ -1,4 +1,4 @@
-class MassagesController < ApplicationController
+class MessagesController < ApplicationController
 
   def index
     @message = Message.new
