@@ -1,34 +1,42 @@
+.page-heading {
+  font-size: 25px;
+  margin: 28px 20px 14px;
+  color: yellowgreen;
+  font-weight: bold;
+}
+
+.user-info{
+  min-height: calc(100vh - 161px);
+}
+
 .inner {
   width: 1024px;
   margin: 0 auto;
 }
 
-.user-wrapper{
-  min-height: calc(100vh - 161px);
-}
-
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
-  width: 50%;
+  width: 90%;
 }
 
 .table-1{
   text-align: left;
   font-weight: bold;
-  background: #fafafa;
+  background: yellowgreen;
+  color: #ffffff;
   border-collapse: collapse;
-  border: 1px solid #f5f5f5;
+  border: 1px solid yellowgreen;
   width: 30%;
   padding: 8px;
 }
 
 .table-2{
   text-align: left;
-  border: 1px solid #f5f5f5;
+  border: 1px solid yellowgreen;
   border-collapse: collapse;
   width: 70%;
-  padding: 16px 8px;
+  padding: 20px 16px;
 }
 
 .user-pet {

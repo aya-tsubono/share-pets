@@ -1,8 +1,10 @@
+<%= render "shared/header" %>
+
 <div class="user-info">
   <div class="inner">
     <div class="user-wrapper">
       <h2 class="page-heading">
-        <%= @user.nickname+"さんの情報"%>
+        <%= @user.nickname+" さんの情報"%>
       </h2>
       <table class="table">
         <tbody>
@@ -11,25 +13,69 @@
             <td class="table-2"><%= @user.nickname %></td>
           </tr>
           <tr>
-            <th class="table-1">プロフィール</th>
-            <td class="table-2"><%= @user.profile %></td>
+            <th class="table-1">居住地</th>
+            <td class="table-2"><%= @user.prefecture.name %></td>
           </tr>
           <tr>
-            <th class="table-1">所属</th>
-            <td class="table-2"><%= @user.occupation %></td>
+            <th class="table-1">世帯情報</th>
+            <td class="table-2"><%= @user_detail.household.name %></td>
           </tr>
           <tr>
-            <th class="table-1">役職</th>
-            <td class="table-2"><%= @user.position %></td>
+            <th class="table-1">過去の飼育経験</th>
+            <td class="table-2"><%= @user_detail.experience %></td>
+          </tr>
+          <tr>
+            <th class="table-1">現在の飼育状況</th>
+            <td class="table-2"><%= @user_detail.have_animal %></td>
+          </tr>
+          <tr>
+            <th class="table-1">現在の住居</th>
+            <td class="table-2"><%= @user_detail.pet_friendly.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">経済的な状況</th>
+            <td class="table-2"><%= @user_detail.economic_status %></td>
           </tr>
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= @user.name+"さんのプロトタイプ"%>
+        <%= @user.nickname+" さんの譲渡に関する情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table-1">探しているペット</th>
+            <td class="table-2"><%= @user_detail.desired_animal %></td>
+          </tr>
+          <tr>
+            <th class="table-1">緊急時の預け先</th>
+            <td class="table-2"><%= @user_detail.deposit %></td>
+          </tr>
+          <tr>
+            <th class="table-1">譲渡時に不妊去勢手術していない<br>ペットを譲渡する場合</th>
+            <td class="table-2"><%= @user_detail.have_surgery.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">ワクチン接種</th>
+            <td class="table-2"><%= @user_detail.get_vaccine.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">譲渡時の自宅への訪問</th>
+            <td class="table-2"><%= @user_detail.visit.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">同居者のペット飼育に対する同意</th>
+            <td class="table-2"><%= @user_detail.consent.name %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="page-heading">
+        <%= @user.nickname+" さんの投稿一覧"%>
       </h2>
       <div class="user-pet">
         <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%= render partial: 'prototypes/prototype', collection: @prototypes%>
+        <%# render partial: 'prototypes/prototype', collection: @prototypes%>
       </div>
     </div>
   </div>
