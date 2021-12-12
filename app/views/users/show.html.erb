@@ -75,7 +75,16 @@
       </h2>
       <div class="user-pet">
         <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%# render partial: 'prototypes/prototype', collection: @prototypes%>
+<div class="card">
+  <%= link_to image_tag(@pet.image, width: "300px", class: :card__img), "#" %>
+  <div class="card__body">
+    <%= link_to @pet.title, "#", class: :card__title%>
+    <p class="card__summary">
+      <%= @pet.breed %>
+    </p>
+    <%= link_to "by"+@pet.user.nickname, '#', class: :card__user %>
+  </div>
+</div>
       </div>
     </div>
   </div>

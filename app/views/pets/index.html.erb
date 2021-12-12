@@ -16,15 +16,12 @@
       <%= link_to pet_path(pet) do %>
         <div class='pet-img-content'>
           <%= image_tag pet.image, class: "pet-img" %>
-
           <%# if pet.adoption.present? %>
           <div class='sold-out'>
             <span>譲渡決定！</span>
           </div>
           <%# end %>
-
         </div>
-
         <div class='pet-info'>
           <h3 class='pet-title'>
             <%= pet.title %>
