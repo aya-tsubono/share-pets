@@ -1,6 +1,10 @@
+li {
+  list-style: none;
+}
+
 .page-heading {
   font-size: 25px;
-  margin: 28px 20px 14px;
+  margin: 40px 20px 14px;
   color: yellowgreen;
   font-weight: bold;
 }
@@ -40,8 +44,15 @@
 }
 
 .user-pet {
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+.user-pet>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
 }
