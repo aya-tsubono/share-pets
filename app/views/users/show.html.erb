@@ -2,6 +2,7 @@
 
 <div class="user-info">
   <div class="inner">
+    <%# ユーザー情報 %>
     <div class="user-wrapper">
       <h2 class="page-heading">
         <%= @user.nickname+" さんの情報"%>
@@ -69,23 +70,38 @@
           </tr>
         </tbody>
       </table>
+    <%# //ユーザー情報 %>
 
+   <%# 投稿一覧 %>
       <h2 class="page-heading">
         <%= @user.nickname+" さんの投稿一覧"%>
       </h2>
       <div class="user-pet">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-<div class="card">
-  <%= link_to image_tag(@pet.image, width: "300px", class: :card__img), "#" %>
-  <div class="card__body">
-    <%= link_to @pet.title, "#", class: :card__title%>
-    <p class="card__summary">
-      <%= @pet.breed %>
-    </p>
-    <%= link_to "by"+@pet.user.nickname, '#', class: :card__user %>
-  </div>
-</div>
+        <% @pets.each do |pet| %> 
+        <li class='list'>
+        <%= link_to pet_path(pet) do %>
+        <div class='pet-img-content'>
+          <%= image_tag pet.image, class: "pet-img" %>
+          <%# if pet.adoption.present? %>
+          <div class='sold-out'>
+            <span>譲渡決定！</span>
+          </div>
+          <%# end %>
+        </div>
+        <div class='pet-info'>
+          <h3 class='pet-title'>
+            <%= pet.title %>
+          </h3>
+          <div class='pet-name'>
+            <span><%= pet.animal_name %> ちゃん<br>
+            <%= pet.breed %> / <%= pet.sex.name %> / <%= pet.age.name %></span>
+          </div>
+        </div>
+      <% end %>
+      </li>
+      <% end %>
       </div>
+    <%# //投稿一覧 %>
     </div>
   </div>
 </div>
