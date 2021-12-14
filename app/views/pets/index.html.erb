@@ -27,8 +27,11 @@
             <%= pet.title %>
           </h3>
           <div class='pet-name'>
-            <span><%= pet.animal_name %> ちゃん<br>
-            <%= pet.breed %> / <%= pet.sex.name %> / <%= pet.age.name %></span>
+            <span><%= pet.animal_name %> ちゃん( <%= pet.age.name %> )<br>
+            <%= pet.breed %> / <%= pet.sex.name %> </span>
+          </div>
+          <div class='user-name'>
+            投稿者 <%= link_to pet.user.nickname, user_path(pet.user_id) %>
           </div>
         </div>
       <% end %>
