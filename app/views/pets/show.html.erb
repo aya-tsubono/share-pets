@@ -43,7 +43,7 @@
       <tbody>
         <tr>
           <th class="detail-item">投稿者</th>
-          <td class="detail-value"><%= @pet.user.nickname %></td>
+          <td class="detail-value"><%= link_to @pet.user.nickname, user_path(@user) %></td>
         </tr>
         <tr>
           <th class="detail-item">犬種・猫種</th>

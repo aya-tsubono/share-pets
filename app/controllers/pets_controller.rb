@@ -20,6 +20,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    @user = @pet.user_id
   end
 
   def edit
