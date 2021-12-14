@@ -3,6 +3,7 @@
 <div class="user-info">
   <div class="inner">
     <%# ユーザー情報 %>
+    <% if user_signed_in? %>
     <div class="user-wrapper">
       <h2 class="page-heading">
         <%= @user.nickname+" さんの情報"%>
@@ -70,6 +71,7 @@
           </tr>
         </tbody>
       </table>
+    <% end %>
     <%# //ユーザー情報 %>
 
    <%# 投稿一覧 %>
