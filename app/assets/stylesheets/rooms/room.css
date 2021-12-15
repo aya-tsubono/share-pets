@@ -1,7 +1,8 @@
 .room-text{
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 23px;
+  padding: 20px 0;
 }
+
 .room-form {
   width: 980px;
   margin: 60px auto;
@@ -43,7 +44,7 @@
 }
 
 .room-form-field {
-  margin-top: 30px;
+  margin-top: 35px;
 }
 .room-form-field:after {
   content: "";
@@ -63,6 +64,16 @@
   float: right;
   width: 60%;
 }
-.room-form-pulldown {
+
+.room-form-field-center {
+  text-align: center;
+}
+
+.room-pet-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.room-pet-info {
   font-size: 20px;
 }
