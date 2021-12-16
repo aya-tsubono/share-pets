@@ -3,12 +3,13 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @pet = Pet.find(params[:pet_id])
   end
 
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to root_path
+      redirect_to room_messages_path
     else
       render :new
     end
@@ -17,6 +18,6 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:room_name, user_ids: [])
+    params.require(:room).permit(:pet_id, :room_name, user_ids: [])
   end
 end

@@ -41,6 +41,8 @@
       </div>
     </div>
     <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    <input name="room[user_ids][]" type="hidden" value=<%= @pet.user.id %>>
+    <input name="room[pet_id][]" type="hidden" value=<%= @pet.id %>>
     <div class='room-form-field'>
       <div class='room-form-right'>
         <%= f.submit "申 請", class: 'room-green-btn'%>
