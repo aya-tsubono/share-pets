@@ -6,7 +6,7 @@
     <h2 class="name">
       <%= @pet.title %>
     </h2>
-    <div class="item-img-content">
+    <div class="pet-img-content">
       <%= image_tag @pet.image, class:"pet-box-img" %>
       <%# 商品が売れている場合は、sold outを表示しましょう %>
       <%#<div class="sold-out">
@@ -29,7 +29,7 @@
     <% end %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <% if user_signed_in? && (current_user.id != @pet.user_id) %>
-    <%= link_to "里親を希望する", new_room_path, class:"pet-green-btn" %>
+    <%= link_to "里親を希望する", new_room_path(pet_id: @pet.id), class:"pet-green-btn" %>
     <% end %>
     <%# //商品が売れていない場合はこちらを表示しましょう %>
 
