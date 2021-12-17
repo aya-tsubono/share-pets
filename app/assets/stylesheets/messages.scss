@@ -56,7 +56,7 @@
 
 .chat-header{
   height: 100px;
-  padding: 0 20px;
+  padding: 0 10px;
   background-color: yellowgreen;
   display: flex;
   justify-content: space-between;
@@ -67,7 +67,7 @@
 }
 
 .header-title{
-  margin-top: 36px;
+  margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
@@ -106,7 +106,7 @@
 .messages{
   height: calc(100vh - 100px - 90px);
   background-color: #fafafa;
-  padding: 46px 40px 0;
+  padding: 15px 30px 0;
   overflow: scroll;
 }
 
@@ -119,8 +119,8 @@
 }
 
 .message-user {
-  color: #434a54;
-  font-size: 16px;
+  color: olivedrab;
+  font-size: 14px;
 }
 
 .message-date {
@@ -130,13 +130,13 @@
 }
 
 .lower-message {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .message-content {
   color: #434a54;
   font-size: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .form{
