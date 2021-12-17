@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @room = Room.find(params[:room_id])
     @messages = @room.messages.includes(:user)
     @pet = @room.pet
+    @user = @room.room_users.where.not(user_id: @pet.user_id)
   end
 
   def create

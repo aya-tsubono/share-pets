@@ -37,7 +37,7 @@
         <div class="header-button">
           <% if user_signed_in? && (current_user.id == @pet.user_id) %>
             <%= link_to "里親決定", '#', class: "adopt-btn" %>
-            <%= link_to "里親希望者のプロフィール", "#", class: "prof-btn" %>
+            <%= link_to "申請者のプロフィール", user_path(@user.ids), class: "prof-btn" %>
           <% end %>
           <% if user_signed_in? && (current_user.id != @pet.user_id) %>
             <%= link_to "投稿者のプロフィール", user_path(@pet.user_id), class: "prof-btn" %>
