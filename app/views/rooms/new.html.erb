@@ -4,14 +4,6 @@
   <%= render 'shared/error_messages', model: f.object %>
 
     <div class='room-form-field'>
-      <div class='room-form-field-left'>
-        <%= f.label :チャットルーム名, class: 'room-form-label'%>
-      </div>
-      <div class='room-form-field-right'>
-        <%= f.text_field :room_name, class: 'room_name room-form-input', placeholder: '〇〇ちゃん里親希望 (名前)'%>
-      </div>
-    </div>
-    <div class='room-form-field'>
       <div class='room-form-field-center'>
         <div class='room-text'>
           <h1>下記投稿に里親申請をします</h1>
@@ -42,7 +34,8 @@
     </div>
     <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
     <input name="room[user_ids][]" type="hidden" value=<%= @pet.user.id %>>
-    <input name="room[pet_id][]" type="hidden" value=<%= @pet.id %>>
+    <input name="room[pet_id]" type="hidden" value=<%= @pet.id %>>
+    <input name="room[room_name]" type="hidden" value=<%= @pet.animal_name %>ちゃんの里親申請>
     <div class='room-form-field'>
       <div class='room-form-right'>
         <%= f.submit "申 請", class: 'room-green-btn'%>
