@@ -15,7 +15,7 @@
         <% end %>
       </div>
     <% end %>
-    
+
     <%# ユーザー情報 %>
     <% if user_signed_in? %>
     <div class="user-wrapper">
@@ -76,12 +76,20 @@
             <td class="table-2"><%= @user_detail.get_vaccine.name %></td>
           </tr>
           <tr>
+            <th class="table-1">譲渡後の飼育環境</th>
+            <td class="table-2"><%= @user_detail.indoor_outdoor %></td>
+          </tr>
+          <tr>
             <th class="table-1">譲渡時の自宅への訪問</th>
             <td class="table-2"><%= @user_detail.visit.name %></td>
           </tr>
           <tr>
             <th class="table-1">同居者のペット飼育に対する同意</th>
             <td class="table-2"><%= @user_detail.consent.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">備考</th>
+            <td class="table-2"><%= @user_detail.remarks %></td>
           </tr>
         </tbody>
       </table>
