@@ -1,9 +1,10 @@
 .chat-message{
+  width: 100%;
   display: flex;
 }
 
 .side-bar{
-  width: 300px;
+  width: 20%;
   height: 100vh;
   background-color: #253141;
 }
@@ -16,9 +17,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.header-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
 
 .header-name a{
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: #fafafa;
   text-decoration: none;
@@ -39,37 +45,61 @@
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 
 
 .chat{
-  width: calc(100vh - 300px);
+  width: 80%;
   background-color: #ffffff;
 }
 
 .chat-header{
   height: 100px;
-  padding: 0 40px;
+  padding: 0 20px;
+  background-color: yellowgreen;
   display: flex;
   justify-content: space-between;
+}
+
+.left-header {
+  padding: 0 20px;
 }
 
 .header-title{
   margin-top: 36px;
   font-size: 24px;
-  color: #333;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.pet-link a{
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.adopt-btn {
+  border: 3px solid darkorange;
+  color: darkorange;
+  background-color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px;
 }
 
 .header-button{
   margin-top: 40px;
 }
 
-.header-button a{
-  border: 1px solid darkred;
-  color: darkred;
+.prof-btn {
+  border: 2px solid olivedrab;
+  color: olivedrab;
+  background-color: #ffffff;
+  font-weight: bold;
   text-decoration: none;
-  padding: 20px;
+  padding: 15px;
+  margin-left: 15px;
 }
 
 
@@ -111,7 +141,7 @@
 
 .form{
   height: 90px;
-  background-color: #DDDDDD;
+  background-color: olivedrab;
   padding: 20px 40px;
   display: flex;
 }
@@ -131,9 +161,10 @@ display: flex;
 
 .form-submit{
   height: 50px;
-  background-color: #38aef0;
+  background-color:#ffffff;
   font-size: 16px;
-  color: white;
+  font-weight: bold;
+  color: olivedrab;
   padding: 0 20px; 
   margin-left: 15px;
   border: none;
@@ -141,8 +172,8 @@ display: flex;
 
 .form-image{
   width: 60px;
-  font-size: 12px;
-  background-color: lightblue;
+  font-size: 14px;
+  background-color: olivedrab;
   color: white;
   padding: 12px;
   margin: 5px 10px;
