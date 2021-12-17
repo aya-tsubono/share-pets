@@ -6,7 +6,7 @@
   <div class="side-bar">
     <div class="side-bar-header">
       <div class="header-name">
-        <%= link_to current_user.nickname, '#' %>
+        <%= link_to current_user.nickname, user_path(current_user.id) %> さんのルーム
       </div>
     </div>
 
@@ -14,7 +14,7 @@
       <% current_user.rooms.each do |room| %>
       <div class="room">
         <div class="room-name">
-          <%= link_to @room.room_name, '#' %>
+          <%= link_to @room.room_name, room_messages_path(room) %>
         </div>
       </div>
       <% end %>
@@ -28,38 +28,27 @@
       <div class="left-header">
         <div class="header-title">
           <%= @room.room_name %>
-          <%= link_to "投稿ページを見る", '#' %>
+        </div>
+        <div class="pet-link">
+          <%= link_to "投稿ページを見る", pet_path(@pet.id) %>
         </div>
       </div>
       <div class="right-header">
         <div class="header-button">
           <% if user_signed_in? && (current_user.id == @pet.user_id) %>
-            <%= link_to "里親決定", '#' %>
+            <%= link_to "里親決定", '#', class: "adopt-btn" %>
+            <%= link_to "申請者のプロフィール", user_path(@user.ids), class: "prof-btn" %>
           <% end %>
-          <%= link_to "投稿者のプロフィール", '#' %>
-          <%= link_to "里親希望者のプロフィール", '#' %>
+          <% if user_signed_in? && (current_user.id != @pet.user_id) %>
+            <%= link_to "投稿者のプロフィール", user_path(@pet.user_id), class: "prof-btn" %>
+          <% end %>
         </div>
       </div>
     </div>
 
   <%# メッセージ %>
-    <div class="messages">
-    <div class="message">
-      <div class="upper-message">
-        <div class="message-user">
-          <%= message.user.nickname %>
-        </div>
-        <div class="message-date">
-          <%= l message.created_at %>
-        </div>
-      </div>
-      <div class="lower-message">
-        <div class="message-content">
-        <%= message.content %>
-        </div>
-        <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
-      </div>
-    </div>
+  <div class="messages">
+    <%= render partial: 'message', collection: @messages %>
   </div>
   <%# //メッセージ %>
 

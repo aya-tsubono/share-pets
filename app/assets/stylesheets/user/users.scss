@@ -1,0 +1,64 @@
+li {
+  list-style: none;
+}
+
+.page-heading {
+  font-size: 25px;
+  margin: 40px 0px 14px;
+  color: yellowgreen;
+  font-weight: bold;
+}
+
+.user-info{
+  min-height: calc(100vh - 161px);
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.room-link{
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px 20px;
+}
+
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.table-1{
+  text-align: left;
+  font-weight: bold;
+  background: yellowgreen;
+  color: #ffffff;
+  border-collapse: collapse;
+  border: 5px dotted #ffffff;
+  width: 20%;
+  padding: 10px;
+}
+
+.table-2{
+  text-align: left;
+  border: 5px dotted yellowgreen;
+  border-collapse: collapse;
+  width: 80%;
+  padding: 20px 16px;
+}
+
+.user-pet {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-pet>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}

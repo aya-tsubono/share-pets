@@ -1,0 +1,131 @@
+<%= render "shared/header" %>
+
+<div class="user-info">
+  <div class="inner">
+    <% if user_signed_in? && (current_user.id == @user.id) %>
+      <div class="rooms-index">
+        <h2 class="page-heading">
+        <%= @user.nickname+" さんのチャットルーム"%>
+        </h2>
+        <% current_user.rooms.each do |room| %>
+        <div class="room-link">
+          <%= "・" %>
+          <%= link_to room.room_name, room_messages_path(room) %>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%# ユーザー情報 %>
+    <% if user_signed_in? %>
+    <div class="user-wrapper">
+      <h2 class="page-heading">
+        <%= @user.nickname+" さんの情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table-1">名前</th>
+            <td class="table-2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table-1">居住地</th>
+            <td class="table-2"><%= @user.prefecture.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">世帯情報</th>
+            <td class="table-2"><%= @user_detail.household.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">過去の飼育経験</th>
+            <td class="table-2"><%= @user_detail.experience %></td>
+          </tr>
+          <tr>
+            <th class="table-1">現在の飼育状況</th>
+            <td class="table-2"><%= @user_detail.have_animal %></td>
+          </tr>
+          <tr>
+            <th class="table-1">現在の住居</th>
+            <td class="table-2"><%= @user_detail.pet_friendly.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">経済的な状況</th>
+            <td class="table-2"><%= @user_detail.economic_status %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= @user.nickname+" さんの譲渡に関する情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table-1">探しているペット</th>
+            <td class="table-2"><%= @user_detail.desired_animal %></td>
+          </tr>
+          <tr>
+            <th class="table-1">緊急時の預け先</th>
+            <td class="table-2"><%= @user_detail.deposit %></td>
+          </tr>
+          <tr>
+            <th class="table-1">譲渡時に不妊去勢手術していない<br>ペットを譲渡する場合</th>
+            <td class="table-2"><%= @user_detail.have_surgery.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">ワクチン接種</th>
+            <td class="table-2"><%= @user_detail.get_vaccine.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">譲渡後の飼育環境</th>
+            <td class="table-2"><%= @user_detail.indoor_outdoor %></td>
+          </tr>
+          <tr>
+            <th class="table-1">譲渡時の自宅への訪問</th>
+            <td class="table-2"><%= @user_detail.visit.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">同居者のペット飼育に対する同意</th>
+            <td class="table-2"><%= @user_detail.consent.name %></td>
+          </tr>
+          <tr>
+            <th class="table-1">備考</th>
+            <td class="table-2"><%= @user_detail.remarks %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+    <%# //ユーザー情報 %>
+
+   <%# 投稿一覧 %>
+      <h2 class="page-heading">
+        <%= @user.nickname+" さんの投稿一覧"%>
+      </h2>
+      <div class="user-pet">
+        <% @pets.each do |pet| %> 
+        <li class='list'>
+        <%= link_to pet_path(pet) do %>
+        <div class='pet-img-content'>
+          <%= image_tag pet.image, class: "pet-img" %>
+          <%# if pet.adoption.present? %>
+          <div class='sold-out'>
+            <span>譲渡決定！</span>
+          </div>
+          <%# end %>
+        </div>
+        <div class='pet-info'>
+          <h3 class='pet-title'>
+            <%= pet.title %>
+          </h3>
+          <div class='pet-name'>
+            <span><%= pet.animal_name %> ちゃん<br>
+            <%= pet.breed %> / <%= pet.sex.name %> / <%= pet.age.name %></span>
+          </div>
+        </div>
+      <% end %>
+      </li>
+      <% end %>
+      </div>
+    <%# //投稿一覧 %>
+    </div>
+  </div>
+</div>
