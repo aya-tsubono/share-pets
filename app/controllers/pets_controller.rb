@@ -41,8 +41,8 @@ class PetsController < ApplicationController
   end
 
   def search
-    @q = Item.ransack(params[:q])
-    @items = @q.result
+    @q = Pet.ransack(params[:q])
+    @pets = @q.result
   end
 
   private
