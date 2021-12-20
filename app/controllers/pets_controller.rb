@@ -40,6 +40,11 @@ class PetsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result
+  end
+
   private
 
   def pet_params
