@@ -24,9 +24,7 @@ class PetsController < ApplicationController
   end
 
   def edit
-    if @pet.user_id != current_user.id
-    redirect_to root_path 
-    end
+    redirect_to root_path if @pet.user_id != current_user.id
   end
 
   def update

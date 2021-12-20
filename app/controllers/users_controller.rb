@@ -11,9 +11,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @user_detail = UserDetail.find(params[:id])
-    if @user.id != current_user.id
-      redirect_to root_path 
-      end
+    redirect_to root_path if @user.id != current_user.id
   end
 
   def update
@@ -25,11 +23,10 @@ class UsersController < ApplicationController
     end
   end
 
-private
+  private
 
-def user_params
-  params.require(:user_detail).permit(:birthday, :household_id, :experience, :have_animal, :pet_friendly_id, :desired_animal,
-    :economic_status, :deposit, :have_surgery_id, :get_vaccine_id, :indoor_outdoor, :visit_id, :consent_id, :remarks).merge(user_id: current_user.id)
-end
-
+  def user_params
+    params.require(:user_detail).permit(:birthday, :household_id, :experience, :have_animal, :pet_friendly_id, :desired_animal,
+                                        :economic_status, :deposit, :have_surgery_id, :get_vaccine_id, :indoor_outdoor, :visit_id, :consent_id, :remarks).merge(user_id: current_user.id)
+  end
 end
