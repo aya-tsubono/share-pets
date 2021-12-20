@@ -1,0 +1,70 @@
+.search-main {
+  padding: 2vh 15vw;
+}
+
+.search-title{
+  font-size: 30px;
+  font-weight: bold;
+  background-color: yellowgreen;
+  color: #ffffff;
+  padding: 5px;
+  text-align: center;
+}
+
+#detailed-search-wrapper{
+  display:flex;
+  justify-content: center;
+}
+
+#detailed-search-form{
+  background-color: white;
+  width: 350px;
+}
+
+.search-field{
+  margin: 0.5rem 0;
+}
+
+.search-pet-lists {
+  padding: 10px 0 10px 0;
+}
+
+
+#detailed-search-result-wrapper{
+  width: 80%;
+  display: flex;
+}
+
+.list{
+  list-style: none;
+}
+
+#detailed-search-result{
+  width: 100%;
+  display: flex;
+}
+
+.posted-content{
+  margin: 10px;
+}
+
+.search-pet-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.search-pet-info {
+  padding: 0 10px;
+}
+
+
+
+.check_lb {
+  display:block;
+}
+
+#post_search{
+  display: flex;
+}
