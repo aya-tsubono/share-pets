@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pets#index'
 
   resources :pets
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resources :rooms, only: [:new, :create] do
     resources :messages, only: [:index, :create]
   end
