@@ -18,12 +18,12 @@
 
     <%# ユーザー情報 %>
     <% if user_signed_in? %>
-
-    <%= link_to "編集", edit_user_path, class:"edit-user-btn" %>
-
     <div class="user-wrapper">
       <h2 class="page-heading">
         <%= @user.nickname+" さんの情報"%>
+        <% if current_user.id == @user.id %>
+        <%= link_to "登録情報の編集", edit_user_path, class:"edit-user-btn" %>
+        <% end %>
       </h2>
       <table class="table">
         <tbody>
