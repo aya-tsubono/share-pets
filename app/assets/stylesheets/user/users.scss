@@ -9,6 +9,15 @@ li {
   font-weight: bold;
 }
 
+.edit-user-btn {
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: olivedrab;
+  border: 3px olivedrab solid ;
+}
+
 .user-info{
   min-height: calc(100vh - 161px);
 }
