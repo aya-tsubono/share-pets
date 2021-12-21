@@ -37,9 +37,9 @@
       <%= f.collection_select(:weight_id_eq, Weight.all, :id, :name, {include_blank: "---"}) %>
     </div>
     <div class="search-field">
-      <%= f.label :prefecture_id_eq, '所在地' %>
+      <%= f.label :prefecture_id_in, '所在地' %>
       <br>
-      <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: "---"}) %>
+      <%= f.collection_check_boxes(:prefecture_id_in, Prefecture.all, :id, :name, {include_blank: "---"}) %>
     </div>
     <div class="search-field">
       <%= f.label :vaccination_id_eq, 'ワクチン接種' %>
