@@ -39,7 +39,6 @@
   cursor: pointer;
   background-color: yellowgreen;
   color: #ffffff;
-  border: 1px olive solid ;
   padding: 8px;
 }
 
@@ -54,64 +53,82 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
+  background-color: yellowgreen;
 }
 
 .lists-left {
   display: flex;
   min-width: 200px;
+  margin: auto 1vh;
+}
 
+.search-link-btn {
+  text-decoration: none;
+  padding: 7px 12px;
+  margin: 0 1vw;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-weight: bold;
 }
 
 .category-list {
   text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+  padding: 7px 12px;
+  margin: 0 1vw;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-weight: bold;
 }
 
 .lists-right {
   display: flex;
   list-style: none;
   align-items: flex-end;
+  margin: auto 1vh;
+  line-height: 40px;
 }
 
-
-.user-nickname {
+.my-page {
   text-decoration: none;
-  margin-right: 3vw;
-  color: yellowgreen;
+  margin: 0 1vw;
+  color: #ffffff;
+  border: 2px solid #ffffff;
   font-weight: bold;
+  padding: 7px 12px;
 }
 
 .logout {
   text-decoration: none;
-  color: yellowgreen;
+  color: #ffffff;
+  border: 2px solid #ffffff;
   font-weight: bold;
-  padding: 6px;
+  padding: 7px 12px;
+  margin: 0 1vw;
 }
 
 .post-btn {
-  padding: 10px;
-  margin-left: 3vw;
   text-decoration: none;
+  padding: 7px 12px;
+  margin: 0 1vh;
   color: #ffffff;
-  background-color: yellowgreen;
-  border: 1px olive solid ;
+  border: 2px solid #ffffff;
   font-weight: bold;
 }
 
 .login {
   text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: yellowgreen;
+  padding: 7px 12px;
+  margin: 0 1vw;
+  color: #ffffff;
+  border: 2px solid #ffffff;
   font-weight: bold;
 }
 
 .sign-up {
-  padding: 10px;
   text-decoration: none;
+  padding: 7px 12px;
+  margin: 0 1vh;
   color: #ffffff;
-  background-color: yellowgreen;
-  border: 1px olive solid ;
+  border: 2px solid #ffffff;
   font-weight: bold;
 }
