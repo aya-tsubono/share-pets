@@ -2,23 +2,24 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag('sharepets-logo.jpg', class:"pet-icon"), "/" %>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
+    <%= search_form_for Pet.ransack(params[:q]), url: search_pets_path, html: {class: "search-form"} do |f| %>
+      <%= f.text_field :title, placeholder: 'タイトルから探す', class: 'input-box' %>
+      <br>
+      <%= f.label :submit, class: "search-button" do %>
         <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
-  </div>
+        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+      <% end %>
+    <% end %>
+    </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー1', "#", class: "category-list" %></li>
-      <li><%= link_to 'カテゴリー2', "#", class: "category-list" %></li>
+      <li><%= link_to '詳細検索ページ', search_pets_path, class: "search-link-btn" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in?%>
-      <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li>
+      <li><%= link_to 'マイページ', user_path(current_user), class: "my-page" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <li><%= link_to '投稿する', new_pet_path, method: :get, class: "post-btn" %></li>
+      <li><%= link_to '投稿', new_pet_path, method: :get, class: "post-btn" %></li>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>

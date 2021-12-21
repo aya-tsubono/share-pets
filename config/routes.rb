@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get 'pets/index'
   root to: 'pets#index'
 
-  resources :pets
+  resources :pets do
+    collection do
+      get 'search'
+    end
+  end
   resources :users, only: [:show, :edit, :update]
   resources :rooms, only: [:new, :create] do
     resources :messages, only: [:index, :create]
