@@ -3,7 +3,7 @@
 }
 
 .search-title{
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   background-color: yellowgreen;
   color: #ffffff;
@@ -53,6 +53,11 @@
   font-weight: bold;
   text-decoration: none;
   padding: 0 10px;
+}
+
+.search-pet-img {
+  width: 30vh;
+  height: 30vh;
 }
 
 .search-pet-info {
