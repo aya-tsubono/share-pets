@@ -11,14 +11,9 @@
   text-align: center;
 }
 
-#detailed-search-wrapper{
-  display:flex;
-  justify-content: center;
-}
-
 #detailed-search-form{
   background-color: white;
-  width: 350px;
+  width: 380px;
 }
 
 .search-field{
@@ -26,13 +21,12 @@
 }
 
 .search-pet-lists {
-  padding: 10px 0 10px 0;
+  padding: 10px 0 10px 10px;
   flex-wrap: wrap;
 }
 
-
 #detailed-search-result-wrapper{
-  width: 80%;
+  width: 100%;
   display: flex;
 }
 
@@ -63,14 +57,4 @@
 
 .search-pet-info {
   padding: 0 10px;
-}
-
-
-
-.check_lb {
-  display:block;
-}
-
-#post_search{
-  display: flex;
 }
