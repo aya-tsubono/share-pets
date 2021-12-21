@@ -41,6 +41,10 @@ class PetsController < ApplicationController
   end
 
   def search
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
     @q = Pet.ransack(params[:q])
     @pets = @q.result
   end

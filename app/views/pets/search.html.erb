@@ -7,9 +7,9 @@
 <div class='search-contents' id="detailed-search-result-wrapper">
   <%= search_form_for @q, url: search_pets_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
-      <%= f.label :title_cont, 'タイトル' %>
+      <%= f.label :title, 'タイトル' %>
       <br>
-      <%= f.text_field :title_cont, placeholder: 'キーワード' %>
+      <%= f.text_field :title, placeholder: 'キーワード', value: params[:q]&.dig(:title) %>
     </div>
     <div class="search-field">
       <%= f.label :user_nickname_cont, '投稿者名' %>
