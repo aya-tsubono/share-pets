@@ -22,11 +22,11 @@ class Pet < ApplicationRecord
   belongs_to :vaccination
   belongs_to :castration
 
-  validates :animal_category_id, presence: true, numericality: { message: "can't be blank" }
-  validates :sex_id,             presence: true, numericality: { message: "can't be blank" }
-  validates :age_id,             presence: true, numericality: { message: "can't be blank" }
-  validates :weight_id,          presence: true, numericality: { message: "can't be blank" }
-  validates :prefecture_id,      presence: true, numericality: { message: "can't be blank" }
-  validates :vaccination_id,     presence: true, numericality: { message: "can't be blank" }
-  validates :castration_id,      presence: true, numericality: { message: "can't be blank" }
+  validates :animal_category_id, presence: true, numericality: { only_integer: true }
+  validates :sex_id,             presence: true, numericality: { only_integer: true }
+  validates :age_id,             presence: true, numericality: { only_integer: true }
+  validates :weight_id,          presence: true, numericality: { only_integer: true }
+  validates :prefecture_id,      presence: true, numericality: { only_integer: true }
+  validates :vaccination_id,     presence: true, numericality: { only_integer: true }
+  validates :castration_id,      presence: true, numericality: { only_integer: true }
 end
