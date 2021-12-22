@@ -12,3 +12,9 @@
   cursor: pointer;
   margin-bottom: 5px;
 }
+
+.preview-image {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}

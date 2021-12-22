@@ -58,7 +58,8 @@
 /* 画像 */
 .img-upload {
   display: flex;
-  justify-content: space-between;
+  display: block;
+  justify-content: left;
   flex-wrap: wrap;
   padding: 2vh 0;
 }

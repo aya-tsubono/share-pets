@@ -26,8 +26,8 @@
 }
 
 .pet-box-img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   min-height: 500px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
