@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
   belongs_to :user
   has_many :rooms
-  has_one_attached :image
+  has_many_attached :images
 
   validates :title,       presence: true, length: { maximum: 50 }
   validates :animal_name, presence: true, length: { maximum: 50 }
@@ -11,7 +11,7 @@ class Pet < ApplicationRecord
   validates :reason,      presence: true, length: { maximum: 500 }
   validates :charge,      presence: true, inclusion: { in: 0..9_999_999 }, format: { with: /\A[0-9]+\z/ }, numericality: true
   validates :condition,   presence: true, length: { maximum: 500 }
-  validates :image,       presence: true
+  validates :images,      presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :animal_category
