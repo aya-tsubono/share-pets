@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
   // 新規投稿・編集ページのフォームを取得
-  const postForm = document.getElementById('new_post');
+  const postForm = document.getElementById('new_pet');
   // プレビューを表示するためのスペースを取得
   const previewList = document.getElementById('previews');
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
   if (!postForm) return null;
-
+  
    // 投稿できる枚数の制限を定義
    const imageLimits = 5;
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
     newFileField.setAttribute('name', 'post[images][]');
 
     // 最後のfile_fieldを取得
-    const lastFileField = document.querySelector('input[type="file"][name="post[images][]"]:last-child');
+    const lastFileField = document.querySelector('input[type="file"][name="pet[images][]"]:last-child');
     // nextDataIndex = 最後のfile_fieldのdata-index + 1
     const nextDataIndex = Number(lastFileField.getAttribute('data-index')) +1;
     newFileField.setAttribute('data-index', nextDataIndex);
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function(){
     // 画像の枚数が最大のときに削除ボタンを押した場合、file_fieldを1つ追加する
     const imageCount = document.querySelectorAll(".preview").length;
     if (imageCount == imageLimits - 1) buildNewFileField();
-    
   };
 
   // input要素で値の変化が起きた際に呼び出される関数の中身
@@ -75,11 +74,13 @@ document.addEventListener('DOMContentLoaded', function(){
     const dataIndex = e.target.getAttribute('data-index');
 
      const file = e.target.files[0];
+
      // fileが空 = 何も選択しなかったのでプレビュー等を削除して終了する
     if (!file) {
       deleteImage(dataIndex);
       return null;
     };
+    
      const blob = window.URL.createObjectURL(file);
  
       // data-indexを使用して、既にプレビューが表示されているかを確認する
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function(){
    };
  
    // input要素を取得
-   const fileField = document.querySelector('input[type="file"][name="post[images][]"]');
+   const fileField = document.querySelector('input[type="file"][name="pet[images][]"]');
  
    // input要素で値の変化が起きた際に呼び出される関数
    fileField.addEventListener('change', changedFileField);
