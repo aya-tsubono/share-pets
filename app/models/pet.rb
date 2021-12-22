@@ -11,7 +11,7 @@ class Pet < ApplicationRecord
   validates :reason,      presence: true, length: { maximum: 500 }
   validates :charge,      presence: true, inclusion: { in: 0..9_999_999 }, format: { with: /\A[0-9]+\z/ }, numericality: true
   validates :condition,   presence: true, length: { maximum: 500 }
-  validates :images,      presence: true
+  validates :images,      presence: true, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :animal_category
