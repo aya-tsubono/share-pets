@@ -73,6 +73,12 @@
   margin-bottom: 15px;
 }
 
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+}
+
 /* /画像 */
 
 /* タイトルと名前 */

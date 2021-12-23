@@ -25,11 +25,13 @@
   font-size: 25px;
 }
 
+.pet-img-content {
+  text-align : center
+}
+
 .pet-box-img {
-  height: 200px;
-  width: 200px;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
+  height: 500px;
+  width: 500px;
   object-fit: contain;
 }
 
@@ -41,10 +43,10 @@
   margin-right: 10px;
 }
 
-.image-delete-button {
-  text-align: center;
-  border: solid 1px;
-  cursor: pointer;
+.pet-other-img {
+  height: 400px;
+  width: 400px;
+  object-fit: contain;
 }
 
 .pet-name-box {
