@@ -53,7 +53,7 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:title, :animal_name, :animal_category_id, :breed, :sex_id, :age_id, :weight_id, :status, :prefecture_id, :vaccination_id, :castration_id,
-                                :area, :reason, :charge, :condition, {images: []}).merge(user_id: current_user.id)
+                                :area, :reason, :charge, :condition, { images: [] }).merge(user_id: current_user.id)
   end
 
   def set_pet

@@ -89,14 +89,14 @@ RSpec.describe Pet, type: :model do
       it 'imageが空では登録できない' do
         @pet.images = nil
         @pet.valid?
-        expect(@pet.errors.full_messages).to include("Images can't be blank", "Images は1枚以上5枚以下にしてください")
+        expect(@pet.errors.full_messages).to include("Images can't be blank", 'Images は1枚以上5枚以下にしてください')
       end
       it 'imageは5枚を超えて登録できない' do
         6.times do
           @pet.images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png', content_type: 'image/png')
         end
         @pet.valid?
-        expect(@pet.errors.full_messages).to include("Images は1枚以上5枚以下にしてください")
+        expect(@pet.errors.full_messages).to include('Images は1枚以上5枚以下にしてください')
       end
       it 'titleが50文字を超えると登録できない' do
         @pet.title = 'a' * 51
