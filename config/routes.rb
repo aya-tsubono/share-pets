@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: 'pets#index'
 
   resources :pets do
+    resources :adoptions, only: [:new, :create]
     collection do
       get 'search'
     end
