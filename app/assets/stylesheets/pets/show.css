@@ -25,11 +25,27 @@
   font-size: 25px;
 }
 
+.pet-img-content {
+  text-align : center
+}
+
 .pet-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
+  height: 500px;
+  width: 500px;
+  object-fit: contain;
+}
+
+.other-images {
+  display: flex;
+}
+
+.other-image {
+  margin-right: 10px;
+}
+
+.pet-other-img {
+  height: 400px;
+  width: 400px;
   object-fit: contain;
 }
 

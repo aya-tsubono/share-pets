@@ -58,7 +58,8 @@
 /* 画像 */
 .img-upload {
   display: flex;
-  justify-content: space-between;
+  display: block;
+  justify-content: left;
   flex-wrap: wrap;
   padding: 2vh 0;
 }
@@ -70,6 +71,12 @@
 
 .click-upload>p {
   margin-bottom: 15px;
+}
+
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
 }
 
 /* /画像 */

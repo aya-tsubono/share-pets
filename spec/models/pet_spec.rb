@@ -22,7 +22,7 @@ RSpec.describe Pet, type: :model do
         expect(@pet.errors.full_messages).to include("Animal name can't be blank")
       end
       it 'animal_category_idが空では登録できない' do
-        @pet.animal_category_id = 1
+        @pet.animal_category_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Animal category can't be blank")
       end
@@ -32,32 +32,32 @@ RSpec.describe Pet, type: :model do
         expect(@pet.errors.full_messages).to include("Breed can't be blank")
       end
       it 'sex_idが空では登録できない' do
-        @pet.sex_id = 1
+        @pet.sex_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Sex can't be blank")
       end
       it 'age_idが空では登録できない' do
-        @pet.age_id = 1
+        @pet.age_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Age can't be blank")
       end
       it 'weight_idが空では登録できない' do
-        @pet.weight_id = 1
+        @pet.weight_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Weight can't be blank")
       end
       it 'prefecture_idが空では登録できない' do
-        @pet.prefecture_id = 1
+        @pet.prefecture_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Prefecture can't be blank")
       end
       it 'vaccination_idが空では登録できない' do
-        @pet.vaccination_id = 1
+        @pet.vaccination_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Vaccination can't be blank")
       end
       it 'castration_idが空では登録できない' do
-        @pet.castration_id = 1
+        @pet.castration_id = nil
         @pet.valid?
         expect(@pet.errors.full_messages).to include("Castration can't be blank")
       end
@@ -87,9 +87,16 @@ RSpec.describe Pet, type: :model do
         expect(@pet.errors.full_messages).to include("Status can't be blank")
       end
       it 'imageが空では登録できない' do
-        @pet.image = nil
+        @pet.images = nil
         @pet.valid?
-        expect(@pet.errors.full_messages).to include("Image can't be blank")
+        expect(@pet.errors.full_messages).to include("Images can't be blank", 'Images は1枚以上5枚以下にしてください')
+      end
+      it 'imageは5枚を超えて登録できない' do
+        6.times do
+          @pet.images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png', content_type: 'image/png')
+        end
+        @pet.valid?
+        expect(@pet.errors.full_messages).to include('Images は1枚以上5枚以下にしてください')
       end
       it 'titleが50文字を超えると登録できない' do
         @pet.title = 'a' * 51

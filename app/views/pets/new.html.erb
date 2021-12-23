@@ -5,21 +5,19 @@
   </header>
   <div class="pets-main">
     <h2 class="pets-title">ペットの登録</h2>
-    <%= form_with model: @pet, local: true do |f| %>
+    <%= form_with model: @pet, id: 'new_pet', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
     <%# 画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
-        画像
+        画像(最大５枚まで)
         <span class="indispensable">必須</span>
       </div>
+      <div id="previews"></div>
       <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"pet-image" %>
+        <%= f.file_field :images, name: 'pet[images][]', data: {index: 0}, id:"pet-image" %>
       </div>
     </div>
     <%# /画像 %>

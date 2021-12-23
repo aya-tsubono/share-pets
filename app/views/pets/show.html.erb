@@ -7,7 +7,14 @@
       <%= @pet.title %>
     </h2>
     <div class="pet-img-content">
-      <%= image_tag @pet.image, class:"pet-box-img" %>
+      <%= image_tag @pet.images[0], class:"pet-box-img" %>
+        <div class="other-images">
+          <% @pet.images[1..-1].each do |image| %>
+            <div class="other-image">
+              <%= image_tag image, class:"pet-other-img" %>
+            </div>
+          <%end%>
+        </div>
       <%# 商品が売れている場合は、sold outを表示しましょう %>
       <%#<div class="sold-out">
         <span>里親決定!!</span>
