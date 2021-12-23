@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // 2枚目用のfile_fieldを作成
     const newFileField = document.createElement('input');
     newFileField.setAttribute('type', 'file');
-    newFileField.setAttribute('name', 'post[images][]');
+    newFileField.setAttribute('name', 'pet[images][]');
 
     // 最後のfile_fieldを取得
     const lastFileField = document.querySelector('input[type="file"][name="pet[images][]"]:last-child');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
       deleteImage(dataIndex);
       return null;
     };
-    
+
      const blob = window.URL.createObjectURL(file);
  
       // data-indexを使用して、既にプレビューが表示されているかを確認する
