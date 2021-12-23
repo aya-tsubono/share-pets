@@ -12,6 +12,17 @@ class AdoptionsController < ApplicationController
   end
 
   def create
+    @adoption = Adoption.new(adoption_params)
+    if @adoption.save
+    redirect_to root_path
+    else
+    render :new
+    end
+  end
 
+  private
+  
+  def adoption_params
+    params.require(:adoption).merge(user_id: current_user.id, pet_id: params[:pet_id])
   end
 end
