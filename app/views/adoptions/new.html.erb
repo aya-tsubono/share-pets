@@ -1,7 +1,5 @@
 <div class='room-form'>
-  <%=form_with model: @adoption, local: true do |f|%>
-
-  <%= render 'shared/error_messages', model: f.object %>
+  <%= form_with model: @adoption, url: new_pet_adoption_path, local: true do |f| %>
 
     <div class='room-form-field'>
       <div class='room-form-field-center'>
@@ -15,7 +13,7 @@
           <h2 class='room-pet-title'>
             <%= @pet.title %>
           </h2>
-          <%= image_tag @pet.image, class: "pet-img" %>
+          <%= image_tag @pet.images[0], class: "pet-img" %>
           <div class='room-pet-info'>
             名前 : <%= @pet.animal_name %> ちゃん<br>
             年齢 : <%= @pet.age.name %><br>
@@ -31,12 +29,13 @@
         </div>
       </div>
     </div>
-    <input name="room[user_ids][]" type="hidden" value=<%= "申請者のid" %>>
-    <input name="room[pet_id]" type="hidden" value=<%= @pet.id %>>
+    <input name="adoption[user_id]" type="hidden" value=<%= @user.ids %>>
+    <input name="adoption[pet_id]" type="hidden" value=<%= @pet.id %>>
     <div class='room-form-field'>
       <div class='room-form-right'>
         <%= f.submit "申 請", class: 'room-green-btn'%>
       </div>
     </div>
+
   <% end %>
 </div>
