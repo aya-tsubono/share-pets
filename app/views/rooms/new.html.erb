@@ -15,7 +15,7 @@
           <h2 class='room-pet-title'>
             <%= @pet.title %>
           </h2>
-          <%= image_tag @pet.image, class: "pet-img" %>
+          <%= image_tag @pet.images[0], class: "pet-img" %>
           <div class='room-pet-info'>
             名前 : <%= @pet.animal_name %> ちゃん<br>
             年齢 : <%= @pet.age.name %><br>
