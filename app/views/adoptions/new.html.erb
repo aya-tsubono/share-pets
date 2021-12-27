@@ -1,5 +1,5 @@
 <div class='room-form'>
-  <%= form_with model: @adoption, url: new_pet_adoption_path, local: true do |f| %>
+  <%= form_with model: @adoption, url: pet_adoptions_path, local: true do |f| %>
 
     <div class='room-form-field'>
       <div class='room-form-field-center'>
@@ -25,15 +25,14 @@
     <div class='room-form-field'>
       <div class='room-form-field-center'>
         <div class='room-create-text'>
-          <h2>内容を確認し、問題なければ申請ボタンを押してください</h2>
+          <h2>内容を確認し、問題なければ下記ボタンを押してください</h2>
         </div>
       </div>
     </div>
-    <input name="adoption[user_id]" type="hidden" value=<%= @user.ids %>>
-    <input name="adoption[pet_id]" type="hidden" value=<%= @pet.id %>>
+    <input name="adoption[user_id]" type="hidden" value=<%= @user.id %>>
     <div class='room-form-field'>
       <div class='room-form-right'>
-        <%= f.submit "申 請", class: 'room-green-btn'%>
+        <%= f.submit "里親決定", class: 'room-green-btn'%>
       </div>
     </div>
 
