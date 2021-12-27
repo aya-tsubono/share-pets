@@ -69,15 +69,20 @@
     <% @pets.each do |pet| %>
       <li class='list'>
       <%= link_to pet_path(pet.id) do %>
-        <div class="posted-content">
-          <%= image_tag pet.images[0], class: "search-pet-img" %><br>
-          <div class='search-pet-title'> 
-            <%= pet.title %>
-            </div>
-          <div class='search-pet-info'>
-          <%= pet.animal_name%> ちゃん( <%= pet.age.name %> )<br>
-          <%= pet.breed %> / <%= pet.sex.name %>
+        <div class="pet-img-content">
+          <%= image_tag pet.images[0], class: "pet-img" %><br>
+          <% if pet.adoption.present? %>
+          <div class='sold-out'>
+            <span>譲渡決定!!</span>
           </div>
+          <% end %>
+        </div>
+        <div class='search-pet-title'> 
+          <%= pet.title %>
+        </div>
+        <div class='search-pet-info'>
+        <%= pet.animal_name%> ちゃん( <%= pet.age.name %> )<br>
+        <%= pet.breed %> / <%= pet.sex.name %>
         </div>
       <% end %>
       </li>

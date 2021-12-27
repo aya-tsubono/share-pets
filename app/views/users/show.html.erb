@@ -109,11 +109,11 @@
         <%= link_to pet_path(pet) do %>
         <div class='pet-img-content'>
           <%= image_tag pet.images[0], class: "pet-img" %>
-          <%# if pet.adoption.present? %>
+          <% if pet.adoption.present? %>
           <div class='sold-out'>
             <span>譲渡決定！</span>
           </div>
-          <%# end %>
+          <% end %>
         </div>
         <div class='pet-info'>
           <h3 class='pet-title'>
@@ -129,6 +129,7 @@
       <% end %>
       </div>
     <%# //投稿一覧 %>
+    
     </div>
   </div>
 </div>

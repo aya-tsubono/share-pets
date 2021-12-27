@@ -8,40 +8,33 @@
     </h2>
     <div class="pet-img-content">
       <%= image_tag @pet.images[0], class:"pet-box-img" %>
-        <div class="other-images">
-          <% @pet.images[1..-1].each do |image| %>
-            <div class="other-image">
-              <%= image_tag image, class:"pet-other-img" %>
-            </div>
-          <%end%>
+        <% if @pet.adoption.present? %>
+          <div class="sold-out">
+          <span>里親決定!!</span>
+          </div>
+        <%end%>
+    </div>
+    <div class="other-images">
+      <% @pet.images[1..-1].each do |image| %>
+        <div class="other-image">
+           <%= image_tag image, class:"pet-other-img" %>
         </div>
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
-      <%#<div class="sold-out">
-        <span>里親決定!!</span>
-      </div>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
+      <%end%>
     </div>
     <div class="pet-name-box">
       <span class="pet-name-info">
         <%= @pet.animal_name %> ちゃん<br>
-        <%= @pet.sex.name %> <%= @pet.age.name %>
       </span>
     </div>
 
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-    <% if user_signed_in? && (current_user.id == @pet.user_id) %>
+    <% if user_signed_in? && (current_user.id == @pet.user_id) && @pet.adoption.blank? %>
     <%= link_to "編 集", edit_pet_path, method: :get, class: "pet-green-btn" %>
     <p class="or-text">or</p>
     <%= link_to "削 除", pet_path, method: :delete, class:"pet-destroy" %>
     <% end %>
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <% if user_signed_in? && (current_user.id != @pet.user_id) %>
+    <% if user_signed_in? && (current_user.id != @pet.user_id) && @pet.adoption.blank? %>
     <%= link_to "里親を希望する", new_room_path(pet_id: @pet.id), class:"pet-green-btn" %>
     <% end %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-
-
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
     <div class="pet-explain-box">
       <span><%= "詳細情報" %></span>

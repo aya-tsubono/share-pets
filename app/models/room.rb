@@ -4,6 +4,6 @@ class Room < ApplicationRecord
   has_many :messages
   belongs_to :pet, optional: true
 
-  validates :room_name, presence: true
+  validates :room_name, presence: true, length: { maximum: 40 }
   validates :pet_id, presence: true
 end

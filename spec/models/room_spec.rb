@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Room, type: :model do
   before do
-    @room = FactoryBot.build(:room)
+    @room = FactoryBot.create(:room)
   end
 
   describe 'ルーム作成' do
@@ -16,6 +16,11 @@ RSpec.describe Room, type: :model do
         @room.room_name = ''
         @room.valid?
         expect(@room.errors.full_messages).to include("Room name can't be blank")
+      end
+      it 'pet_idが紐づいていないと作成できない' do
+        @room.pet_id = nil
+        @room.valid?
+        expect(@room.errors.full_messages).to include("Pet can't be blank")
       end
       it 'room_nameが40文字以上だと保存できない' do
         @room.room_name = 'a' * 41
