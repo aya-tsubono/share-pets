@@ -30,5 +30,4 @@ class AdoptionsController < ApplicationController
   def set_pet
     @pet = Pet.find(params[:id])
   end
-
 end
