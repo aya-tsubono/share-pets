@@ -3,28 +3,29 @@ class AdoptionsController < ApplicationController
   
   def new
     @pet = Pet.find(params[:pet_id])
-    @room = Room.find(params[:room_id])
-    @user = @room.room_users.where.not(user_id: @pet.user_id)
+    @user = User.find(params[:user_id])
+    @adoption = Adoption.new
     if current_user.id != @pet.user_id
       redirect_to root_path
     elsif (current_user.id == @pet.user_id) && @pet.adoption.present?
       redirect_to root_path
     end
-    @adoption = Adoption.new
   end
 
   def create
+    @pet = Pet.find(params[:pet_id])
     @adoption = Adoption.new(adoption_params)
+    binding.pry
     if @adoption.save
-    redirect_to root_path
+      redirect_to root_path
     else
-    render :new
+      render :new
     end
   end
 
   private
 
   def adoption_params
-    params.require(:adoption).permit(:user_id, :pet_id)
+    params.require(:adoption).permit(:user_id).merge(pet_id: @pet.id)
   end
 end
