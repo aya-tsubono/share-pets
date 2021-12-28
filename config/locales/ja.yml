@@ -1,5 +1,47 @@
 ja:
   activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        full_name: お名前（フルネーム）
+        full_name_kana: フリカナ(全角)
+        phone_number: 電話番号
+        prefecture_id: 居住地
+      user_detail:
+        birthday: 生年月日
+        household_id: 世帯情報
+        experience: 動物の飼育経験
+        have_animal: 現在のペットの飼育状況
+        pet_friendly_id: 現在の住居の情報
+        desired_animal: 探しているペットの情報
+        economic_status: 収入状況
+        deposit: 緊急時の預け先
+        have_surgery_id: 不妊去勢手術をしていないペットについて
+        get_vaccine_id: ワクチン接種
+        indoor_outdoor: 譲渡後の飼育環境
+        visit: 譲渡者の自宅訪問
+        consent: 同居者の同意
+        remarks: 備考
+      pet:
+        title: タイトル
+        images: 画像
+        animal_name: ペットの名前
+        animal_category_id: カテゴリー
+        breed: 種類
+        sex_id: 性別
+        age_id: 年齢
+        weight_id: 大きさ
+        status: ペットの状態
+        prefecture_id: 居住地
+        vaccination_id: ワクチン接種について
+        castration_id: 避妊去勢手術について
+        area: 募集地域
+        reason: 譲渡の経緯
+        charge: 譲渡費用
+        condition: 譲渡条件
+      message:
+        content: メッセージ
+        image: 画像
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -203,5 +245,4 @@ ja:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
-
     pm: "午後"
