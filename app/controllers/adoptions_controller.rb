@@ -28,6 +28,6 @@ class AdoptionsController < ApplicationController
   end
 
   def set_pet
-    @pet = Pet.find(params[:id])
+    @pet = Pet.find(params[:pet_id])
   end
 end
