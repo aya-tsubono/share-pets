@@ -56,31 +56,31 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">現在の住居について</label>
+      <label class="form-text">現在の住居の情報</label>
     </div>
      <%= f.collection_select(:pet_friendly_id, PetFriendly.all, :id, :name, {}, {class:"select-box", id:"pet-friendly"}) %>
   </div>
   <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">探しているペットについて</label>
+          <label class="form-text">探しているペットの情報</label>
         </div>
         <%= f.text_field :desired_animal, class:"input-default", id:"desired-animal", placeholder:"例）子犬を探している。成猫を探している。など",maxlength:"500"%>
   </div>
   <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">収入状況について</label>
+          <label class="form-text">収入状況</label>
         </div>
         <%= f.text_field :economic_status, class:"input-default", id:"economic-status", placeholder:"例）正社員として勤務。夫婦で共働きをしている。など",maxlength:"200"%>
   </div>
   <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">緊急時の預け先について</label>
+          <label class="form-text">緊急時の預け先</label>
         </div>
         <%= f.text_field :deposit, class:"input-default", id:"deposit", placeholder:"例）実家で預かってもらう。親しい友人に相談している。など",maxlength:"200"%>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">譲渡時に不妊去勢手術していないペットを譲渡する場合について</label>
+      <label class="form-text">譲渡時に不妊去勢手術をしていないペットについて</label>
     </div>
      <%= f.collection_select(:have_surgery_id, HaveSurgery.all, :id, :name, {}, {class:"select-box", id:"have-surgery"}) %>
   </div>
