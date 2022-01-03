@@ -15,8 +15,5 @@ class User < ApplicationRecord
   validates :full_name,      presence: true
   validates :full_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :phone_number,   presence: true, format: { with: /\A[0-9]{10,11}\z/ }
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :prefecture
-  validates :prefecture_id, presence: true, numericality: { only_integer: true }
+  validates :birthday,       presence: true
 end

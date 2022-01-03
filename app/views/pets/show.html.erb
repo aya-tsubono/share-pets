@@ -12,14 +12,14 @@
           <div class="sold-out">
           <span>里親決定!!</span>
           </div>
-        <%end%>
+        <% end %>
     </div>
     <div class="other-images">
       <% @pet.images[1..-1].each do |image| %>
         <div class="other-image">
            <%= image_tag image, class:"pet-other-img" %>
         </div>
-      <%end%>
+      <% end %>
     </div>
     <div class="pet-name-box">
       <span class="pet-name-info">
@@ -98,7 +98,7 @@
           <td class="detail-value"><%= @pet.condition %></td>
         </tr>
         <tr>
-          <th class="detail-item">備考：<br>健康状態や性格など</th>
+          <th class="detail-item">備考:<br>健康状態や性格など</th>
           <td class="detail-value"><%= @pet.status %></td>
         </tr>
       </tbody>
