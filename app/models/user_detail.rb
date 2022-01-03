@@ -16,5 +16,5 @@ class UserDetail < ApplicationRecord
   validates :get_vaccine_id,  inclusion: { in: 1..3 }
   validates :visit_id,        inclusion: { in: 1..3 }
   validates :consent_id,      inclusion: { in: 1..5 }
-  validates :prefecture_id,   presence: true,         numericality: { only_integer: true }
+  validates :prefecture_id,   numericality: { only_integer: true }, presence: true
 end

@@ -51,4 +51,5 @@ class Prefecture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :user_details
+  has_many :pets
 end
