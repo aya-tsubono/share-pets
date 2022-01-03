@@ -6,9 +6,9 @@ ja:
         full_name: お名前（フルネーム）
         full_name_kana: フリカナ(全角)
         phone_number: 電話番号
-        prefecture_id: 居住地
-      user_detail:
         birthday: 生年月日
+      user_detail:
+        prefecture_id: 居住地
         household_id: 世帯情報
         experience: 動物の飼育経験
         have_animal: 現在のペットの飼育状況
