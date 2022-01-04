@@ -63,8 +63,13 @@
       <br>
       <%= f.number_field :charge_lteq %> 円以下
     </div>
-    <%= f.submit '検索' %>
+      <%= f.label :submit, class: "search-button" do %>
+        <%= image_tag "search.png", class:"search-icon" %>
+        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+      <% end %>
   <% end %>
+
+  <%# 投稿一覧 %>
   <ul class='search-pet-lists' id="detailed-search-result">
     <% @pets.each do |pet| %>
       <li class='list'>
@@ -88,5 +93,7 @@
       </li>
     <% end %>
   </ul>
+  <%# //投稿一覧 %>
+
 </div>
 </div>

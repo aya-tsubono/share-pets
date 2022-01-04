@@ -20,6 +20,14 @@
   margin: 0.5rem 0;
 }
 
+.search-icon {
+  width: 20%;
+  background-color: yellowgreen;
+  color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+}
+
 .search-pet-lists {
   padding: 10px 0 10px 10px;
   flex-wrap: wrap;
