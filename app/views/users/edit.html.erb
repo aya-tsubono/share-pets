@@ -1,3 +1,7 @@
+<header class="pets-header">
+  <%= link_to image_tag('sharepets-logo.jpg' , size: '150x150'), root_path %>
+</header>
+
 <%# details %>
 <%= form_with model: @user_detail, url: user_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
