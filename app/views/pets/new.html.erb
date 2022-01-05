@@ -1,9 +1,8 @@
+<%= render "shared/header" %>
+
 <div class="pets-contents">
-  <header class="pets-header">
-    <%= link_to image_tag('sharepets-logo.jpg' , size: '150x150'), root_path %>
-  </header>
   <div class="pets-main">
-    <h2 class="pets-title">ペットの登録</h2>
+    <h2 class="pets-title">ペットの投稿</h2>
     <%= form_with model: @pet, id: 'new_pet', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -38,7 +37,7 @@
 
     <%# 種類 %>
     <div class="pets-kinds">
-      <div class="weight-bold-text">ペットの種類</div>
+      <div class="post-bold-text">ペットの種類</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
@@ -56,7 +55,7 @@
 
     <%# 詳細 %>
     <div class="pets-detail">
-      <div class="weight-bold-text">ペットの詳細</div>
+      <div class="post-bold-text">ペットの詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           性別
@@ -99,7 +98,7 @@
 
     <%# 募集条件 %>
     <div class="pets-adoption">
-      <div class="weight-bold-text">募集条件</div>
+      <div class="post-bold-text">募集条件</div>
       <div class="form">
         <div class="weight-bold-text">
           募集地域
@@ -126,8 +125,8 @@
     <%# /募集条件 %>
 
     <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する", class:"sell-btn" %>
+    <div class="send-btn-contents">
+      <%= f.submit "post", class:"send-btn" %><br>
       <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
