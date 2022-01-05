@@ -6,6 +6,27 @@ a {
   background: #f8f8f8;
 }
 
+/* メイン画像 */
+.main-img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-name {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.main-name>span {
+  color: #FFF;
+  font-size: 80px;
+}
+
+/* //メイン画像 */
+
 
 /* 投稿一覧 */
 
