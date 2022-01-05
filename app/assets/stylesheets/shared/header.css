@@ -9,12 +9,12 @@
 }
 
 .nav {
-  font-size: 15px;
+  font-size: 25px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  background-color: yellowgreen;
+  font-family: 'Amatic SC', cursive;
 }
 
 .lists-left {
@@ -24,39 +24,41 @@
 }
 
 .pet-icon {
-  height: 50px;
+  height: 60px;
   margin: 5px 0 0 5px;
+}
+
+.top-page-btn {
+  text-decoration: none;
+  padding: 7px 12px;
+  margin: 0 1vw;
+  color: olivedrab;
 }
 
 .search-link-btn {
   text-decoration: none;
   padding: 7px 12px;
   margin: 0 1vw;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  font-weight: bold;
+  color: olivedrab;
 }
 
 .lists-right {
   display: flex;
   list-style: none;
   align-items: center;
+  margin-right: 1vw;
 }
 
 .my-page {
   text-decoration: none;
   margin: 0 1vw;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  font-weight: bold;
+  color: olivedrab;
   padding: 7px 12px;
 }
 
 .logout {
   text-decoration: none;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  font-weight: bold;
+  color: olivedrab;
   padding: 7px 12px;
   margin: 0 1vw;
 }
@@ -65,25 +67,19 @@
   text-decoration: none;
   padding: 7px 12px;
   margin: 0 1vh;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  font-weight: bold;
+  color: olivedrab;
 }
 
 .login {
   text-decoration: none;
   padding: 7px 12px;
   margin: 0 1vw;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  font-weight: bold;
+  color: olivedrab;
 }
 
 .sign-up {
   text-decoration: none;
   padding: 7px 12px;
   margin: 0 1vh;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  font-weight: bold;
+  color: olivedrab;
 }
