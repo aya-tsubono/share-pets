@@ -2,7 +2,7 @@
 
 <div class='search-main'>
 <div class='search-title'>
-  <%= '詳 細 検 索' %>
+  <%= 'Advanced Search' %>
 </div>
 <div class='search-contents' id="detailed-search-result-wrapper">
   <%= search_form_for @q, url: search_pets_path, html: {id: "detailed-search-form"} do |f| %>
@@ -63,14 +63,13 @@
       <br>
       <%= f.number_field :charge_lteq %> 円以下
     </div>
-      <%= f.label :submit, class: "search-button" do %>
-        <%= image_tag "search.png", class:"search-icon" %>
-        <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
-      <% end %>
+    <div class="search-btn-contents">
+      <%= f.submit "search", class:"search-btn" %>
+    </div>
   <% end %>
 
   <%# 投稿一覧 %>
-  <ul class='search-pet-lists' id="detailed-search-result">
+  <ul class='pet-lists' id="detailed-search-result">
     <% @pets.each do |pet| %>
       <li class='list'>
       <%= link_to pet_path(pet.id) do %>
@@ -82,10 +81,10 @@
           </div>
           <% end %>
         </div>
-        <div class='search-pet-title'> 
+        <div class='pet-title'> 
           <%= pet.title %>
         </div>
-        <div class='search-pet-info'>
+        <div class='pet-info'>
         <%= pet.animal_name%> ちゃん( <%= pet.age.name %> )<br>
         <%= pet.breed %> / <%= pet.sex.name %>
         </div>
