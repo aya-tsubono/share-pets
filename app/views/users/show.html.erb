@@ -2,10 +2,13 @@
 
 <div class="user-info">
   <div class="inner">
+    <div class="my-page-title">
+    <%= @user.nickname+"'s My Page"%>
+    </div>
     <% if user_signed_in? && (current_user.id == @user.id) %>
       <div class="rooms-index">
         <h2 class="page-heading">
-        <%= @user.nickname+" さんのチャットルーム"%>
+        <%= @user.nickname+"'s Chat Room"%>
         </h2>
         <% current_user.rooms.each do |room| %>
         <div class="room-link">
@@ -17,91 +20,84 @@
     <% end %>
 
     <%# ユーザー情報 %>
-    <% if user_signed_in? %>
     <div class="user-wrapper">
       <h2 class="page-heading">
-        <%= @user.nickname+" さんの情報"%>
+        <%= @user.nickname+"'s Profile"%>
         <% if current_user.id == @user.id %>
-        <%= link_to "登録情報の編集", edit_user_path, class:"edit-user-btn" %>
+        <%= link_to "edit", edit_user_path, class:"edit-user-btn" %>
         <% end %>
       </h2>
       <table class="table">
         <tbody>
           <tr>
-            <th class="table-1">名前</th>
-            <td class="table-2"><%= @user.nickname %></td>
+            <th class="detail-item2">名前</th>
+            <td class="detail-value2"><%= @user.nickname %></td>
           </tr>
           <tr>
-            <th class="table-1">居住地</th>
-            <td class="table-2"><%= @user_detail.prefecture.name %></td>
+            <th class="detail-item2">居住地</th>
+            <td class="detail-value2"><%= @user_detail.prefecture.name %></td>
           </tr>
           <tr>
-            <th class="table-1">世帯情報</th>
-            <td class="table-2"><%= @user_detail.household.name %></td>
+            <th class="detail-item2">世帯情報</th>
+            <td class="detail-value2"><%= @user_detail.household.name %></td>
           </tr>
           <tr>
-            <th class="table-1">過去の飼育経験</th>
-            <td class="table-2"><%= @user_detail.experience %></td>
+            <th class="detail-item2">過去の飼育経験</th>
+            <td class="detail-value2"><%= @user_detail.experience %></td>
           </tr>
           <tr>
-            <th class="table-1">現在の飼育状況</th>
-            <td class="table-2"><%= @user_detail.have_animal %></td>
+            <th class="detail-item2">現在の飼育状況</th>
+            <td class="detail-value2"><%= @user_detail.have_animal %></td>
           </tr>
           <tr>
-            <th class="table-1">現在の住居</th>
-            <td class="table-2"><%= @user_detail.pet_friendly.name %></td>
+            <th class="detail-item2">現在の住居</th>
+            <td class="detail-value2"><%= @user_detail.pet_friendly.name %></td>
           </tr>
           <tr>
-            <th class="table-1">経済的な状況</th>
-            <td class="table-2"><%= @user_detail.economic_status %></td>
+            <th class="detail-item2">経済的な状況</th>
+            <td class="detail-value2"><%= @user_detail.economic_status %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">探しているペット</th>
+            <td class="detail-value2"><%= @user_detail.desired_animal %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">緊急時の預け先</th>
+            <td class="detail-value2"><%= @user_detail.deposit %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">不妊去勢手術していないペットを譲渡する場合</th>
+            <td class="detail-value2"><%= @user_detail.have_surgery.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">ワクチン接種</th>
+            <td class="detail-value2"><%= @user_detail.get_vaccine.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">譲渡後の飼育環境</th>
+            <td class="detail-value2"><%= @user_detail.indoor_outdoor %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">譲渡時の自宅への訪問</th>
+            <td class="detail-value2"><%= @user_detail.visit.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">同居者のペット飼育に対する同意</th>
+            <td class="detail-value2"><%= @user_detail.consent.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">備考</th>
+            <td class="detail-value2"><%= @user_detail.remarks %></td>
           </tr>
         </tbody>
       </table>
-      <h2 class="page-heading">
-        <%= @user.nickname+" さんの譲渡に関する情報"%>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table-1">探しているペット</th>
-            <td class="table-2"><%= @user_detail.desired_animal %></td>
-          </tr>
-          <tr>
-            <th class="table-1">緊急時の預け先</th>
-            <td class="table-2"><%= @user_detail.deposit %></td>
-          </tr>
-          <tr>
-            <th class="table-1">譲渡時に不妊去勢手術していない<br>ペットを譲渡する場合</th>
-            <td class="table-2"><%= @user_detail.have_surgery.name %></td>
-          </tr>
-          <tr>
-            <th class="table-1">ワクチン接種</th>
-            <td class="table-2"><%= @user_detail.get_vaccine.name %></td>
-          </tr>
-          <tr>
-            <th class="table-1">譲渡後の飼育環境</th>
-            <td class="table-2"><%= @user_detail.indoor_outdoor %></td>
-          </tr>
-          <tr>
-            <th class="table-1">譲渡時の自宅への訪問</th>
-            <td class="table-2"><%= @user_detail.visit.name %></td>
-          </tr>
-          <tr>
-            <th class="table-1">同居者のペット飼育に対する同意</th>
-            <td class="table-2"><%= @user_detail.consent.name %></td>
-          </tr>
-          <tr>
-            <th class="table-1">備考</th>
-            <td class="table-2"><%= @user_detail.remarks %></td>
-          </tr>
-        </tbody>
-      </table>
-    <% end %>
+    </div>
     <%# //ユーザー情報 %>
 
    <%# 投稿一覧 %>
+    <div class="posts-list">
       <h2 class="page-heading">
-        <%= @user.nickname+" さんの投稿一覧"%>
+        <%= @user.nickname+"'s Posts List"%>
       </h2>
       <div class="user-pet">
         <% @pets.each do |pet| %> 
@@ -111,7 +107,7 @@
           <%= image_tag pet.images[0], class: "pet-img" %>
           <% if pet.adoption.present? %>
           <div class='sold-out'>
-            <span>譲渡決定！</span>
+            <span>譲渡決定!!</span>
           </div>
           <% end %>
         </div>
@@ -128,6 +124,7 @@
       </li>
       <% end %>
       </div>
+    </div>
     <%# //投稿一覧 %>
     
     </div>
