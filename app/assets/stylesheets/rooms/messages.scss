@@ -1,3 +1,4 @@
+/* サイドバー */
 .chat-message{
   width: 100%;
   display: flex;
@@ -6,21 +7,22 @@
 .side-bar{
   width: 20%;
   height: 100vh;
-  background-color: #253141;
 }
 
 .side-bar-header{
   height: 100px;
   padding: 0 20px;  
-  background-color: olivedrab;
+  background-color: olive;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .header-name {
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
+  font-family: 'Amatic SC', cursive;
 }
 
 .header-name a{
@@ -32,51 +34,13 @@
 
 .rooms{
   height: calc(100vh - 100px);
-  background-color: yellowgreen;
-  padding: 0 20px;
-  overflow: scroll;
+  background-color: olivedrab;
+  padding: 20px;
 }
 
-.room {
-  padding: 20px 0 40px;
-}
-
-.room-name a {
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-
-.chat{
-  width: 80%;
-  background-color: #ffffff;
-}
-
-.chat-header{
-  height: 100px;
-  padding: 0 10px;
-  background-color: yellowgreen;
-  display: flex;
-  justify-content: space-between;
-}
-
-.left-header {
-  padding: 0 20px;
-}
-
-.header-title{
-  margin-top: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.pet-link a{
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: underline;
+.room-button{
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
 }
 
 .adopt-btn {
@@ -85,27 +49,52 @@
   background-color: #ffffff;
   font-weight: bold;
   text-decoration: none;
-  padding: 15px;
-}
-
-.header-button{
-  margin-top: 40px;
+  padding: 10px 30px;
+  margin-bottom: 3vh;
+  display: block;
 }
 
 .prof-btn {
-  border: 2px solid olivedrab;
+  border: 3px solid olivedrab;
   color: olivedrab;
   background-color: #ffffff;
   font-weight: bold;
   text-decoration: none;
-  padding: 15px;
-  margin-left: 15px;
+  padding: 10px 30px;
+  display: block;
 }
 
+/* //サイドバー */
 
+/* チャット画面 */
+.chat{
+  width: 80%;
+  background-color: #ffffff;
+}
+
+.chat-header{
+  height: 100px;
+  padding: 0 20px;
+  background-color: olivedrab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title{
+  font-size: 24px;
+}
+
+.header-title a{
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* メッセージ */
 .messages{
   height: calc(100vh - 100px - 90px);
-  background-color: #fafafa;
+  background-color: #CCCC99;
   padding: 15px 30px 0;
   overflow: scroll;
 }
@@ -119,12 +108,12 @@
 }
 
 .message-user {
-  color: olivedrab;
+  color: olive;
   font-size: 14px;
 }
 
 .message-date {
-  color: #999;
+  color: #ffffff;
   font-size: 12px;
   padding-left: 10px;
 }
@@ -141,13 +130,16 @@
 
 .message-form{
   height: 90px;
-  background-color: olivedrab;
+  background-color: olive;
   padding: 20px 40px;
   display: flex;
+  font-family: 'Amatic SC', cursive;
+  font-size: 18px;
 }
+/* //メッセージ */
 
 .form-input{
-background-color: white;
+background-color: #ffffff;
 width: 100%;
 display: flex;
 }
@@ -162,20 +154,19 @@ display: flex;
 .form-submit{
   height: 50px;
   background-color:#ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  color: olivedrab;
+  color: olive;
   padding: 0 20px; 
   margin-left: 15px;
   border: none;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .form-image{
   width: 60px;
-  font-size: 14px;
-  background-color: olivedrab;
-  color: white;
-  padding: 12px;
+  background-color: olive;
+  color: #ffffff;
+  padding: 6px 8px;
   margin: 5px 10px;
   text-align: center;
 }
@@ -183,3 +174,5 @@ display: flex;
 .hidden{
   display: none;
 }
+
+/* //チャット画面 */
