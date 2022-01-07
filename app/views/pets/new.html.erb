@@ -113,13 +113,14 @@
         <div class="weight-bold-text">
           譲渡費用
           <span class="indispensable">必須</span>
+          <p class='info-text'>※半角数字で入力してください</p>
         </div>
         <%= f.text_area :charge, class:"pets-text", id:"pet-charge", placeholder:"譲渡時にかかる費用の概算" %>
         <div class="weight-bold-text">
           譲渡条件
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :condition, class:"pets-text", id:"pet-condition", placeholder:"高齢者不可、完全室内飼いできる方、定期的に近況報告してくださる方、など" , maxlength:"500" %>
+        <%= f.text_area :condition, class:"pets-text", id:"pet-condition", placeholder:"高齢者不可、定期的に近況報告してくださる方、などの条件や譲渡費用の詳細など" , maxlength:"500" %>
       </div>
       </div>
     <%# /募集条件 %>
