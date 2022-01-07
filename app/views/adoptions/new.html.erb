@@ -1,44 +1,44 @@
-<header class="pets-header">
-  <%= link_to image_tag('sharepets-logo.jpg' , size: '150x150'), root_path %>
-</header>
+<%= render "shared/header" %>
 
-<div class='room-form'>
-  <%= form_with model: @adoption, url: pet_adoptions_path, local: true do |f| %>
+<div class='room-request-form'>
+  <div class='room-form'>
+    <%= form_with model: @adoption, url: pet_adoptions_path, local: true do |f| %>
 
-    <div class='room-form-field'>
-      <div class='room-form-field-center'>
-        <div class='room-text'>
-          <h1>下記投稿の里親申請を受理します</h1>
-        </div>
-      </div>
-    </div>
-    <div class='room-form-field'>
-      <div class='room-form-field-center'>
-          <h2 class='room-pet-title'>
-            <%= @pet.title %>
-          </h2>
-          <%= image_tag @pet.images[0], class: "pet-img" %>
-          <div class='room-pet-info'>
-            名前 : <%= @pet.animal_name %> ちゃん<br>
-            年齢 : <%= @pet.age.name %><br>
-            種類 : <%= @pet.breed %><br>
-            性別 : <%= @pet.sex.name %><br>
+      <div class='room-form-field'>
+        <div class='room-form-field-center'>
+          <div class='room-text'>
+            <h1>下記投稿の里親申請を受理します</h1>
           </div>
-      </div>
-    </div>
-    <div class='room-form-field'>
-      <div class='room-form-field-center'>
-        <div class='room-create-text'>
-          <h2>内容を確認し、問題なければ下記ボタンを押してください</h2>
         </div>
       </div>
-    </div>
-    <input name="adoption[user_id]" type="hidden" value=<%= @user.id %>>
-    <div class='room-form-field'>
-      <div class='room-form-right'>
-        <%= f.submit "里親決定", class: 'room-green-btn'%>
+      <div class='room-form-field'>
+        <div class='room-form-field-center'>
+            <h2 class='room-pet-title'>
+              <%= @pet.title %>
+            </h2>
+            <%= image_tag @pet.images[0], class: "pet-img" %>
+            <div class='room-pet-info'>
+              名前 : <%= @pet.animal_name %> ちゃん<br>
+              年齢 : <%= @pet.age.name %><br>
+              種類 : <%= @pet.breed %><br>
+              性別 : <%= @pet.sex.name %><br>
+            </div>
+        </div>
       </div>
-    </div>
+      <div class='room-form-field'>
+        <div class='room-form-field-center'>
+          <div class='room-create-text'>
+            <h2>内容を確認し、問題なければ下記ボタンを押してください</h2>
+          </div>
+        </div>
+      </div>
+      <input name="adoption[user_id]" type="hidden" value=<%= @user.id %>>
+      <div class='room-form-field'>
+        <div class='room-form-center'>
+          <%= f.submit "decided", class: 'request-btn'%>
+        </div>
+      </div>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
