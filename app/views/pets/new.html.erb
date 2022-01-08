@@ -2,7 +2,7 @@
 
 <div class="pets-contents">
   <div class="pets-main">
-    <h2 class="pets-title">ペットの投稿</h2>
+    <h2 class="pets-title">New Post</h2>
     <%= form_with model: @pet, id: 'new_pet', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -27,11 +27,11 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :title, class:"pets-text", id:"pet-title", placeholder:"タイトル", maxlength:"40" %>
-        <div class="weight-bold-text">
-          ペットの名前
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :animal_name, class:"pets-text", id:"pet-name", placeholder:"ペットの名前" ,maxlength:"20" %>
+      <div class="weight-bold-text">
+        ペットの名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :animal_name, class:"pets-text", id:"pet-name", placeholder:"ペットの名前" ,maxlength:"20" %>
     </div>
     <%# /タイトルと名前 %>
 
@@ -128,7 +128,6 @@
     <%# 下部ボタン %>
     <div class="send-btn-contents">
       <%= f.submit "post", class:"send-btn" %><br>
-      <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
