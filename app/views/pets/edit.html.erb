@@ -2,7 +2,7 @@
 
 <div class="pets-contents">
   <div class="pets-main">
-    <h2 class="pets-title">ペットの登録</h2>
+    <h2 class="pets-title">Update</h2>
     <%= form_with model: @pet, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -39,7 +39,7 @@
 
     <%# 種類 %>
     <div class="pets-kinds">
-      <div class="weight-bold-text">ペットの種類</div>
+      <div class="post-bold-text">ペットの種類</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
@@ -57,7 +57,7 @@
 
     <%# 詳細 %>
     <div class="pets-detail">
-      <div class="weight-bold-text">ペットの詳細</div>
+      <div class="post-bold-text">ペットの詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           性別
