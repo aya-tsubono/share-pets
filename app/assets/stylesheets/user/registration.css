@@ -145,3 +145,9 @@
   margin-bottom: 4vh;
   font-family: 'Amatic SC', cursive;
 }
+
+.create-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: olivedrab;
+}
