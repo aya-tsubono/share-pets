@@ -98,7 +98,7 @@
     </table>
     <%# //detail %>
 
-    <div class="show-adopton">
+    <div class="show-adoption">
       <% if user_signed_in? && (current_user.id != @pet.user_id) && @pet.adoption.blank? %>
       <%= link_to "里親を希望する", new_room_path(pet_id: @pet.id), class:"show-adoption-btn" %>
       <% end %>

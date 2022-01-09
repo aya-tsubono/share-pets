@@ -128,21 +128,16 @@
   font-size: 16px;
 }
 
-.change-item-btn {
-  font-size: 30px;
-  text-decoration: none;
-  color: #3CCACE;
-}
-
 /* //detail */
 
 .show-adoption {
   font-family: 'Amatic SC', cursive;
+  margin-top: 4vh;
 }
 
 .show-adoption-btn {
   text-align: center;
-  background-color: olivedrab;
+  background-color: darkorange;
   font-size: 20px;
   font-weight: bold;
   color: #FFF;
