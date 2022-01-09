@@ -1,28 +1,39 @@
 .search-main {
-  padding: 2vh 15vw;
+  padding: 2vh 10vw;
 }
 
 .search-title{
-  font-size: 25px;
-  font-weight: bold;
-  background-color: yellowgreen;
+  font-size: 30px;
   color: #ffffff;
+  background-color: olivedrab;
   padding: 5px;
   text-align: center;
+  font-family: 'Amatic SC', cursive;
 }
 
 #detailed-search-form{
   background-color: white;
-  width: 380px;
+  width: 35%;
 }
 
 .search-field{
   margin: 0.5rem 0;
 }
 
-.search-pet-lists {
-  padding: 10px 0 10px 10px;
-  flex-wrap: wrap;
+.search-btn-contents {
+  width: 40%;
+  padding: 4vh 0;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.search-btn {
+  background: olivedrab;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 25px;
+  margin-bottom: 4vh;
 }
 
 #detailed-search-result-wrapper{
@@ -30,31 +41,9 @@
   display: flex;
 }
 
-.list{
-  list-style: none;
-}
-
 #detailed-search-result{
   width: 100%;
   display: flex;
 }
 
-.posted-content{
-  margin: 10px;
-}
-
-.search-pet-title {
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 10px;
-}
-
-.search-pet-img {
-  width: 30vh;
-  height: 30vh;
-}
-
-.search-pet-info {
-  padding: 0 10px;
-}
+/* 投稿一覧のcssと共通 */

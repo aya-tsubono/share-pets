@@ -1,14 +1,17 @@
 <%= render "shared/header" %>
 
 <div class='main'>
+ <%# メイン画像 %>
+  <%= image_tag 'pet-image', class: "main-img" %>
+    <div class='main-name'>
+      <span>share pets</span>
+    </div>
+ <%# /メイン画像 %>
 
  <%# 投稿一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>里親募集中</h2>
-    <div class="subtitle" >
-      新規投稿
-    </div>
-    <ul class='item-lists'>
+    <h2 class='title'>new post</h2>
+    <ul class='pet-lists'>
     
       <% if @pets.length > 0 %>
       <% @pets.each do |pet| %> 

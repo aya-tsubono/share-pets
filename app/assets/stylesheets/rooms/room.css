@@ -1,68 +1,33 @@
+/* adoptionのnewと共通css */
+
+.room-request-form{
+  width: 100vw;
+  background-color: #CCCC99;
+  padding: 2vh 0;
+}
+
+.room-form {
+  width: 80vw;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
 .room-text{
   font-size: 23px;
   padding: 20px 0;
 }
 
-.room-form {
-  width: 980px;
-  margin: 60px auto;
-  padding: 40px;
-  background-color: #fff;
-  border: 1px solid yellowgreen;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-.room-form-errors {
-  margin: 30px 0;
-  padding: 20px 40px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  text-align: center;
-}
-.room-form-label {
-  display: block;
-  line-height: 60px;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: left;
-}
-.room-form-input {
-  float: left;
-  width: 100%;
-  line-height: 30px;
-  padding: 10px 15px;
-  box-sizing: border-box;
-}
-.room-green-btn {
-  display: inline-block;
-  padding: 20px 50px;
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  background-color: yellowgreen;
-  border: 0;
-}
-
 .room-form-field {
   margin-top: 35px;
 }
+
 .room-form-field:after {
   content: "";
   clear: both;
   display: block;
-}
-
-.room-form-left {
-  float: left;
-  width: 30%;
-  padding-right: 20px;
-  padding-left: 20px;
-  box-sizing: border-box;
-}
-
-.room-form-right {
-  float: right;
-  width: 60%;
 }
 
 .room-form-field-center {
@@ -76,4 +41,22 @@
 
 .room-pet-info {
   font-size: 20px;
+}
+
+.room-form-center {
+  width: 100%;
+  padding: 4vh 0;
+  text-align: center;
+  align-items: center;
+}
+
+.request-btn {
+  background: olivedrab;
+  color: #fff;
+  width: 40%;
+  height: 50px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 4vh;
+  font-family: 'Amatic SC', cursive;
 }

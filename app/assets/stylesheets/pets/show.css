@@ -1,7 +1,7 @@
 /* 概要 */
 
 .pet-show {
-  background-color: #f8f8f8;
+  background-color: #CCCC99;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -12,17 +12,10 @@
 .pet-box {
   background-color: #FFF;
   width: 80vw;
-  min-width: 1200px;
   padding: 10vh 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.pet-box>.name {
-  text-align: center;
-  font-weight: bold;
-  font-size: 25px;
 }
 
 .pet-img-content {
@@ -49,96 +42,105 @@
   object-fit: contain;
 }
 
-.pet-name-box {
-  margin: 25px 0px;
+.pet-title-box {
+  margin: 20px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.pet-name-info {
-  font-size: 20px;
-}
-
-.pet-green-btn {
-  text-align: center;
-  background-color: yellowgreen;
-  font-size: 20px;
+.pet-title-box>.title {
   font-weight: bold;
-  color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.or-text {
   font-size: 20px;
 }
 
-.pet-destroy {
+/* /概要 */
+
+/* 編集削除ボタン */
+.pet-user-btn {
+  font-family: 'Amatic SC', cursive;
+  margin: 3vh 0;
+}
+
+.edit-btn {
+  text-align: center;
+  background-color: olivedrab;
+  font-size: 28px;
+  color: #FFF;
+  margin: 20px 1vh;
+  padding: 1.5vh 8vw;
+}
+
+.destroy-btn {
   background-color: lightgray;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 28px;
   color: black;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 1.5vh 8vw;
 }
+/* //編集削除ボタン */
 
+/* detail */
 .pet-explain-box {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
   margin: 40px 0px;
   overflow-wrap: anywhere;
+  font-family: 'Amatic SC', cursive;
 }
 
 .detail-table {
-  margin-bottom: 30px;
-  width: 90%;
+  width: 120%;
+  margin-bottom: 3vh;
 }
 
-.detail-table2 {
-  margin-bottom: 30px;
-  width: 140%;
-}
-
+/* userマイページ共通 */
 .detail-item {
   width: 20%;
-  background-color: yellowgreen;
-  border: 1px solid olive;
+  background-color: olivedrab;
   font-size: 18px;
   color: #FFF;
-  font-weight: bold;
+  border: 1px solid black;
   text-align: center;
 }
 
 .detail-value {
-  width: 80%;
+  width: 30%;
   padding: 20px;
-  border: 1px solid olive;
+  border: 1px solid;
   font-size: 16px;
 }
 
-
-/* /概要 */
-
-.links {
-  display: flex;
-  justify-content: space-between;
-  width: 50vw;
-
+.detail-item2 {
+  width: 25%;
+  background-color: olivedrab;
+  border: 1px solid black;
+  font-size: 18px;
+  color: #FFF;
+  text-align: center;
 }
 
-.change-item-btn {
-  font-size: 30px;
-  text-decoration: none;
-  color: #3CCACE;
+.detail-value2 {
+  width: 85%;
+  padding: 20px;
+  border: 1px solid;
+  font-size: 16px;
 }
 
-.another-item {
-  display: block;
-  margin: 30px 0px 8px;
-  color: #3CCACE;
-  text-decoration: none;
+/* //detail */
+
+.show-adoption {
+  font-family: 'Amatic SC', cursive;
+  margin-top: 4vh;
+}
+
+.show-adoption-btn {
+  text-align: center;
+  background-color: darkorange;
+  font-size: 20px;
   font-weight: bold;
-  font-size: 23px;
+  color: #FFF;
+  padding: 20px 30px;
+  margin-top: 30px;
 }

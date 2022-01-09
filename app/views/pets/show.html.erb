@@ -1,11 +1,8 @@
 <%= render "shared/header" %>
 
-<%# 概要 %>
 <div class="pet-show">
+  <%# 概要 %>
   <div class="pet-box">
-    <h2 class="name">
-      <%= @pet.title %>
-    </h2>
     <div class="pet-img-content">
       <%= image_tag @pet.images[0], class:"pet-box-img" %>
         <% if @pet.adoption.present? %>
@@ -21,102 +18,91 @@
         </div>
       <% end %>
     </div>
-    <div class="pet-name-box">
-      <span class="pet-name-info">
-        <%= @pet.animal_name %> ちゃん<br>
+    <div class="pet-title-box">
+      <span class="title">
+        <%= @pet.title %>
       </span>
     </div>
 
-    <% if user_signed_in? && (current_user.id == @pet.user_id) && @pet.adoption.blank? %>
-    <%= link_to "編 集", edit_pet_path, method: :get, class: "pet-green-btn" %>
-    <p class="or-text">or</p>
-    <%= link_to "削 除", pet_path, method: :delete, class:"pet-destroy" %>
-    <% end %>
-    <% if user_signed_in? && (current_user.id != @pet.user_id) && @pet.adoption.blank? %>
-    <%= link_to "里親を希望する", new_room_path(pet_id: @pet.id), class:"pet-green-btn" %>
-    <% end %>
+  <%# //概要 %>
 
+    <%# 編集削除ボタン %>
+    <div class="pet-user-btn">
+      <% if user_signed_in? && (current_user.id == @pet.user_id) && @pet.adoption.blank? %>
+      <%= link_to "edit", edit_pet_path, method: :get, class: "edit-btn" %>
+      <%= link_to "delete", pet_path, method: :delete, class:"destroy-btn" %>
+      <% end %>
+    </div>
+    <%# //編集削除ボタン %>
+
+    <%# detail %>
     <div class="pet-explain-box">
-      <span><%= "詳細情報" %></span>
+      <span><%= "pet detail" %></span>
     </div>
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">投稿者</th>
-          <td class="detail-value"><%= link_to @pet.user.nickname, user_path(@user) %></td>
-        </tr>
-        <tr>
+          <th class="detail-item">ペットの名前</th>
+          <td class="detail-value"><%= @pet.animal_name %> ちゃん</td>
           <th class="detail-item">犬種・猫種</th>
           <td class="detail-value"><%= @pet.breed %></td>
         </tr>
         <tr>
           <th class="detail-item">性別</th>
           <td class="detail-value"><%= @pet.sex.name %></td>
-        </tr>
-        <tr>
           <th class="detail-item">年齢</th>
           <td class="detail-value"><%= @pet.age.name %></td>
         </tr>
         <tr>
           <th class="detail-item">大きさ</th>
           <td class="detail-value"><%= @pet.weight.name %></td>
-        </tr>
-        <tr>
           <th class="detail-item">居住地</th>
           <td class="detail-value"><%= @pet.prefecture.name %></td>
         </tr>
         <tr>
           <th class="detail-item">ワクチン接種</th>
           <td class="detail-value"><%= @pet.vaccination.name %></td>
-        </tr>
-        <tr>
           <th class="detail-item">避妊去勢</th>
           <td class="detail-value"><%= @pet.castration.name %></td>
         </tr>
       </tbody>
     </table>
 
-    <div class="pet-explain-box">
-      <span><%= "譲渡の詳細" %></span>
-    </div>
-        <table class="detail-table2">
+    <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">募集地域</th>
-          <td class="detail-value"><%= @pet.area %></td>
+          <th class="detail-item2">募集地域</th>
+          <td class="detail-value2"><%= @pet.area %></td>
         </tr>
         <tr>
-          <th class="detail-item">譲渡費用</th>
-          <td class="detail-value">約 <%= @pet.charge %> 円</td>
+          <th class="detail-item2">譲渡費用</th>
+          <td class="detail-value2">約 <%= @pet.charge %> 円</td>
         </tr>
         <tr>
-          <th class="detail-item">譲渡理由</th>
-          <td class="detail-value"><%= @pet.reason %></td>
+          <th class="detail-item2">譲渡理由</th>
+          <td class="detail-value2"><%= @pet.reason %></td>
         </tr>
         <tr>
-          <th class="detail-item">譲渡条件</th>
-          <td class="detail-value"><%= @pet.condition %></td>
+          <th class="detail-item2">譲渡条件</th>
+          <td class="detail-value2"><%= @pet.condition %></td>
         </tr>
         <tr>
-          <th class="detail-item">備考:<br>健康状態や性格など</th>
-          <td class="detail-value"><%= @pet.status %></td>
+          <th class="detail-item2">備考:<br>健康状態や性格など</th>
+          <td class="detail-value2"><%= @pet.status %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= link_to @pet.user.nickname, user_path(@user) %></td>
         </tr>
       </tbody>
     </table>
-  </div>
-  <%# /概要 %>
+    <%# //detail %>
 
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
+    <div class="show-adoption">
+      <% if user_signed_in? && (current_user.id != @pet.user_id) && @pet.adoption.blank? %>
+      <%= link_to "里親を希望する", new_room_path(pet_id: @pet.id), class:"show-adoption-btn" %>
+      <% end %>
+    </div>
   </div>
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 
-<%= render "shared/footer" %>

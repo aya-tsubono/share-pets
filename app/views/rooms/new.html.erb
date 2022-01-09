@@ -1,3 +1,6 @@
+<%= render "shared/header" %>
+
+<div class='room-request-form'>
 <div class='room-form'>
   <%=form_with model: @room, local: true do |f|%>
 
@@ -28,7 +31,7 @@
     <div class='room-form-field'>
       <div class='room-form-field-center'>
         <div class='room-create-text'>
-          <h2>内容を確認し、問題なければ申請ボタンを押してください</h2>
+          <h2>内容を確認し、問題がなければ下記ボタンを押してください</h2>
         </div>
       </div>
     </div>
@@ -37,8 +40,8 @@
     <input name="room[pet_id]" type="hidden" value=<%= @pet.id %>>
     <input name="room[room_name]" type="hidden" value=<%= @pet.animal_name %>ちゃんの里親申請(申請者:<%= current_user.nickname %>さん)>
     <div class='room-form-field'>
-      <div class='room-form-right'>
-        <%= f.submit "申 請", class: 'room-green-btn'%>
+      <div class='room-form-center'>
+        <%= f.submit "request", class: 'request-btn'%>
       </div>
     </div>
   <% end %>

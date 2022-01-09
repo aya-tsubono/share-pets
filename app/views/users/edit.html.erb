@@ -1,116 +1,107 @@
+<%= render "shared/header" %>
+
 <%# details %>
-<%= form_with model: @user_detail, url: user_path, class: 'registration-main', local: true do |f| %>
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-    <%= @user.nickname %> さんの譲渡に関する情報
-    </h1>
-  </div>
+<div class='new-account'>
+  <%= form_with model: @user_detail, url: user_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+      <%= @user.nickname %> 's Profile
+      </h1>
+    </div>
 
-  <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">生年月日</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-birth-wrap'>
-      <%= raw sprintf(
-                  f.date_select(
-                    :birthday,
-                    class:'select-birth',
-                    id:"birth-date",
-                    use_month_numbers: true,
-                    prompt:'--',
-                    start_year: 1930,
-                    end_year: (Time.now.year - 5),
-                    date_separator: '%s'),
-                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">世帯情報</label>
-    </div>
-     <%= f.collection_select(:household_id, Household.all, :id, :name, {}, {class:"select-box", id:"household"}) %>
-  </div>
-  <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">動物の飼育経験</label>
-        </div>
-        <%= f.text_field :experience, class:"input-default", id:"experience", placeholder:"例）実家で10年ほど猫を飼っていた。ペットを飼ったことがない。など",maxlength:"200"%>
-  </div>
     <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">現在のペットの飼育状況</label>
-        </div>
-        <%= f.text_field :have_animal, class:"input-default", id:"have-animal", placeholder:"例）現在ペットを飼っていません。先住犬が一匹います。など",maxlength:"200"%>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">現在の住居について</label>
+      <div class='form-text-wrap'>
+        <label class="form-text">居住地</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
     </div>
-     <%= f.collection_select(:pet_friendly_id, PetFriendly.all, :id, :name, {}, {class:"select-box", id:"pet-friendly"}) %>
-  </div>
-  <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">探しているペットについて</label>
-        </div>
-        <%= f.text_field :desired_animal, class:"input-default", id:"desired-animal", placeholder:"例）子犬を探している。成猫を探している。など",maxlength:"500"%>
-  </div>
-  <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">収入状況について</label>
-        </div>
-        <%= f.text_field :economic_status, class:"input-default", id:"economic-status", placeholder:"例）正社員として勤務。夫婦で共働きをしている。など",maxlength:"200"%>
-  </div>
-  <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">緊急時の預け先について</label>
-        </div>
-        <%= f.text_field :deposit, class:"input-default", id:"deposit", placeholder:"例）実家で預かってもらう。親しい友人に相談している。など",maxlength:"200"%>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">譲渡時に不妊去勢手術していないペットを譲渡する場合について</label>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">世帯情報</label>
+      </div>
+      <%= f.collection_select(:household_id, Household.all, :id, :name, {}, {class:"select-box", id:"household"}) %>
     </div>
-     <%= f.collection_select(:have_surgery_id, HaveSurgery.all, :id, :name, {}, {class:"select-box", id:"have-surgery"}) %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">ワクチン接種について</label>
+    <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">動物の飼育経験</label>
+          </div>
+          <%= f.text_field :experience, class:"input-default", id:"experience", placeholder:"例）実家で10年ほど猫を飼っていた。ペットを飼ったことがない。など",maxlength:"200"%>
     </div>
-     <%= f.collection_select(:get_vaccine_id, GetVaccine.all, :id, :name, {}, {class:"select-box", id:"get-vaccine"}) %>
-  </div>
-  <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">譲渡後の飼育環境について</label>
-        </div>
-        <%= f.text_field :indoor_outdoor, class:"input-default", id:"indoor-outdoor", placeholder:"例）完全室内飼い。屋外に犬小屋を設置して飼う。など",maxlength:"200"%>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">譲渡者の自宅訪問について</label>
+      <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">現在のペットの飼育状況</label>
+          </div>
+          <%= f.text_field :have_animal, class:"input-default", id:"have-animal", placeholder:"例）現在ペットを飼っていません。先住犬が一匹います。など",maxlength:"200"%>
     </div>
-     <%= f.collection_select(:visit_id, Visit.all, :id, :name, {}, {class:"select-box", id:"visit"}) %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">同居者の同意について</label>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">現在の住居について</label>
+      </div>
+      <%= f.collection_select(:pet_friendly_id, PetFriendly.all, :id, :name, {}, {class:"select-box", id:"pet-friendly"}) %>
     </div>
-     <%= f.collection_select(:consent_id, Consent.all, :id, :name, {}, {class:"select-box", id:"consent"}) %>
+    <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">探しているペットについて</label>
+          </div>
+          <%= f.text_field :desired_animal, class:"input-default", id:"desired-animal", placeholder:"例）子犬を探している。成猫を探している。など",maxlength:"500"%>
+    </div>
+    <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">収入状況について</label>
+          </div>
+          <%= f.text_field :economic_status, class:"input-default", id:"economic-status", placeholder:"例）正社員として勤務。夫婦で共働きをしている。など",maxlength:"200"%>
+    </div>
+    <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">緊急時の預け先について</label>
+          </div>
+          <%= f.text_field :deposit, class:"input-default", id:"deposit", placeholder:"例）実家で預かってもらう。親しい友人に相談している。など",maxlength:"200"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">譲渡時に不妊去勢手術していないペットを譲渡する場合について</label>
+      </div>
+      <%= f.collection_select(:have_surgery_id, HaveSurgery.all, :id, :name, {}, {class:"select-box", id:"have-surgery"}) %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">ワクチン接種について</label>
+      </div>
+      <%= f.collection_select(:get_vaccine_id, GetVaccine.all, :id, :name, {}, {class:"select-box", id:"get-vaccine"}) %>
+    </div>
+    <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">譲渡後の飼育環境について</label>
+          </div>
+          <%= f.text_field :indoor_outdoor, class:"input-default", id:"indoor-outdoor", placeholder:"例）完全室内飼い。屋外に犬小屋を設置して飼う。など",maxlength:"200"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">譲渡者の自宅訪問について</label>
+      </div>
+      <%= f.collection_select(:visit_id, Visit.all, :id, :name, {}, {class:"select-box", id:"visit"}) %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">同居者の同意について</label>
+      </div>
+      <%= f.collection_select(:consent_id, Consent.all, :id, :name, {}, {class:"select-box", id:"consent"}) %>
+    </div>
+    <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">備考</label>
+          </div>
+          <%= f.text_field :remarks, class:"input-default", id:"remarks", placeholder:"何か記載したいことがございましたら、こちらにご記入ください。",maxlength:"500"%>
+    </div>
+  <br><br>
+    <div class='register-btn'>
+      <%= f.submit "Update" ,class:"register-next-btn" %>
+    </div>
   </div>
-  <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">備考</label>
-        </div>
-        <%= f.text_field :remarks, class:"input-default", id:"remarks", placeholder:"何か記載したいことがございましたら、こちらにご記入ください。",maxlength:"500"%>
+  <% end %>
   </div>
-<br><br>
-  <div class='register-btn'>
-    <%= f.submit "更新" ,class:"register-green-btn" %>
-  </div>
-</div>
-<% end %>
-
 <%# //details %>

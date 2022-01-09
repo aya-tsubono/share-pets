@@ -2,29 +2,44 @@ li {
   list-style: none;
 }
 
-.page-heading {
-  font-size: 25px;
-  margin: 40px 0px 14px;
-  color: yellowgreen;
-  font-weight: bold;
-}
-
-.edit-user-btn {
-  font-size: 20px;
-  padding: 10px;
-  margin-left: 10px;
-  text-decoration: none;
-  color: olivedrab;
-  border: 3px olivedrab solid ;
-}
-
 .user-info{
-  min-height: calc(100vh - 161px);
+  background-color: #CCCC99;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
 }
 
 .inner {
-  width: 90%;
-  margin: 0 auto;
+  background-color: #FFF;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.my-page-title {
+  font-weight: bold;
+  font-size: 28px;
+  margin: 4vh 0 2vh;
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  color: olivedrab;
+  font-family: 'Amatic SC', cursive;
+}
+
+.page-heading {
+  font-size: 25px;
+  margin: 4vh 0 2vh;
+  color: olivedrab;
+  font-weight: bold;
+}
+
+.rooms-index {
+  width: 80%;
+  margin-bottom: 4vh;
 }
 
 .room-link{
@@ -33,33 +48,33 @@ li {
   padding: 5px 20px;
 }
 
+.edit-user-btn {
+  font-size: 22px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: olivedrab;
+  border: 3px olivedrab solid ;
+}
+
+.user-wrapper {
+  margin-bottom: 4vh;
+  width: 80%;
+}
+
+/* pet showと共通 */
+
 .table{
   border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 100%;
 }
 
-.table-1{
-  text-align: left;
-  font-weight: bold;
-  background: yellowgreen;
-  color: #ffffff;
-  border-collapse: collapse;
-  border: 5px dotted #ffffff;
-  width: 20%;
-  padding: 10px;
-}
-
-.table-2{
-  text-align: left;
-  border: 5px dotted yellowgreen;
-  border-collapse: collapse;
+/* 投稿一覧 */
+.posts-list {
   width: 80%;
-  padding: 20px 16px;
 }
 
 .user-pet {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -71,3 +86,4 @@ li {
   padding: 1vw;
   background-color: #FFF;
 }
+/* //投稿一覧 */

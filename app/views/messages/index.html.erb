@@ -6,18 +6,21 @@
   <div class="side-bar">
     <div class="side-bar-header">
       <div class="header-name">
-        <%= link_to current_user.nickname, user_path(current_user.id) %> さんのルーム
+        <%= link_to current_user.nickname, user_path(current_user.id) %>'s Room
       </div>
     </div>
-
     <div class="rooms">
-      <% current_user.rooms.each do |room| %>
-      <div class="room">
-        <div class="room-name">
-          <%= link_to @room.room_name, room_messages_path(room) %>
+        <div class="room-button">
+          <% if user_signed_in? && (current_user.id == @pet.user_id) && @pet.adoption.blank? %>
+            <%= link_to "里親承認", new_pet_adoption_path(pet_id: @pet.id, user_id: @user), class: "adopt-btn" %>
+          <% end %>
+          <% if user_signed_in? && (current_user.id == @pet.user_id) %>
+            <%= link_to "申請者のProfile", user_path(@user), class: "prof-btn" %>
+          <% end %>
+          <% if user_signed_in? && (current_user.id != @pet.user_id) %>
+            <%= link_to "投稿者のProfile", user_path(@pet.user_id), class: "prof-btn" %>
+          <% end %>
         </div>
-      </div>
-      <% end %>
     </div>
   </div>
   <%# //サイドバー %>
@@ -25,26 +28,8 @@
   <%# チャット画面 %>
   <div class="chat">
     <div class="chat-header">
-      <div class="left-header">
-        <div class="header-title">
-          <%= @room.room_name %>
-        </div>
-        <div class="pet-link">
-          <%= link_to "投稿ページを見る", pet_path(@pet.id) %>
-        </div>
-      </div>
-      <div class="right-header">
-        <div class="header-button">
-          <% if user_signed_in? && (current_user.id == @pet.user_id) && @pet.adoption.blank? %>
-            <%= link_to "里親決定", new_pet_adoption_path(pet_id: @pet.id, user_id: @user), class: "adopt-btn" %>
-          <% end %>
-          <% if user_signed_in? && (current_user.id == @pet.user_id) %>
-            <%= link_to "申請者のプロフィール", user_path(@user), class: "prof-btn" %>
-          <% end %>
-          <% if user_signed_in? && (current_user.id != @pet.user_id) %>
-            <%= link_to "投稿者のプロフィール", user_path(@pet.user_id), class: "prof-btn" %>
-          <% end %>
-        </div>
+      <div class="header-title">
+        <%= link_to @room.room_name, pet_path(@pet.id) %>
       </div>
     </div>
 
@@ -56,13 +41,13 @@
 
     <%= form_with model: [@room, @message], class: 'message-form', local: true do |f| %>
       <div class="form-input">
-        <%= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力してください' %>
+        <%= f.text_field :content, class: 'form-message', placeholder: 'message' %>
         <label class="form-image">
-        <span class="image-file">画像</span>
+        <span class="image-file">image</span>
         <%= f.file_field :image, class: 'hidden' %>
         </label>
       </div>
-      <%= f.submit '送信', class: 'form-submit' %>
+      <%= f.submit 'Post', class: 'form-submit' %>
     <% end %>
   </div>
   <%# //チャット画面 %>

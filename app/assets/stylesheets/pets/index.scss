@@ -6,6 +6,27 @@ a {
   background: #f8f8f8;
 }
 
+/* メイン画像 */
+.main-img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-name {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.main-name>span {
+  color: #FFF;
+  font-size: 80px;
+}
+
+/* //メイン画像 */
+
 
 /* 投稿一覧 */
 
@@ -15,35 +36,28 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 10vh;
+  font-family: 'Amatic SC', cursive;
 }
 
 .item-contents>.title {
-  font-size: 5vh;
-  line-height: 1.4;
+  font-size: 50px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.item-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: yellowgreen;
-  font-weight: bold;
-}
-
-.item-lists {
+.pet-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: 'Amatic SC', cursive;
 }
 
-.item-lists>.list {
+.pet-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
 }
-
 
 .pet-img-content {
   position: relative;
