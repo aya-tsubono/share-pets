@@ -6,11 +6,31 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "5.4.3",
+    "chart.js": "^3.7.0",
     "node-sass": "^7.0.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^4.5.0"
-  }
+    "webpack-dev-server": "^4.7.3"
+  },
+  "description": "share-pets",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aya-tsubono/share-pets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aya-tsubono/share-pets/issues"
+  },
+  "homepage": "https://github.com/aya-tsubono/share-pets#readme"
 }

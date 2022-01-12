@@ -21,6 +21,7 @@ Password: 2222
 
 ## 洗い出した要件	
 スプレッドシートにまとめた要件定義を記述。
+https://docs.google.com/spreadsheets/d/1G91IsUimkhpJ_MR4WLKwkiZLYkBhscwAAX_-2x5yJbg/edit#gid=282075926
 
 ## 実装した機能についての画像やGIFおよびその説明	
 実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
@@ -29,7 +30,7 @@ Password: 2222
 洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記述。
 
 ## データベース設計	
-/Users/aya/projects/share-pets/ER図.png
+![ER図](https://user-images.githubusercontent.com/88880199/148910799-dff7baf9-dd53-47de-a1ac-6e23241de24f.png)
 
 ## ローカルでの動作方法	
 git clone https://git.heroku.com/share-pets.git

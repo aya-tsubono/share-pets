@@ -1,0 +1,64 @@
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="detail-item2">名前</th>
+            <td class="detail-value2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">居住地</th>
+            <td class="detail-value2"><%= @user_detail.prefecture.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">世帯情報</th>
+            <td class="detail-value2"><%= @user_detail.household.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">過去の飼育経験</th>
+            <td class="detail-value2"><%= @user_detail.experience %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">現在の飼育状況</th>
+            <td class="detail-value2"><%= @user_detail.have_animal %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">現在の住居</th>
+            <td class="detail-value2"><%= @user_detail.pet_friendly.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">経済的な状況</th>
+            <td class="detail-value2"><%= @user_detail.economic_status %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">探しているペット</th>
+            <td class="detail-value2"><%= @user_detail.desired_animal %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">緊急時の預け先</th>
+            <td class="detail-value2"><%= @user_detail.deposit %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">不妊去勢手術していない<br>ペットを譲渡する場合</th>
+            <td class="detail-value2"><%= @user_detail.have_surgery.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">ワクチン接種</th>
+            <td class="detail-value2"><%= @user_detail.get_vaccine.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">譲渡後の飼育環境</th>
+            <td class="detail-value2"><%= @user_detail.indoor_outdoor %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">譲渡時の自宅への訪問</th>
+            <td class="detail-value2"><%= @user_detail.visit.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">ペット飼育に対する同意</th>
+            <td class="detail-value2"><%= @user_detail.consent.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item2">備考</th>
+            <td class="detail-value2"><%= @user_detail.remarks %></td>
+          </tr>
+        </tbody>
+      </table>

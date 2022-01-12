@@ -6,6 +6,22 @@ class UsersController < ApplicationController
   def show
     @pets = @user.pets
     @room = @user.rooms
+    @score = 10
+    @score += 10 if @user_detail.household_id > 1
+    @score += 10 if @user_detail.experience.length > 1
+    @score += 10 if @user_detail.have_animal.length > 1
+    @score += 10 if @user_detail.pet_friendly_id > 1
+    @score += 10 if @user_detail.economic_status.length > 1
+    @score += 10 if @user_detail.desired_animal.length > 1
+    @score += 10 if @user_detail.deposit.length > 1
+    @score += 10 if @user_detail.have_surgery_id > 1
+    @score += 10 if @user_detail.get_vaccine_id > 1
+    @score += 10 if @user_detail.indoor_outdoor.length > 1
+    @score += 10 if @user_detail.visit_id > 1
+    @score += 10 if @user_detail.consent_id > 1
+    @score += 10 if @user_detail.remarks.length > 1
+    @a_score = 140 - @score
+    @percent = @score / 1.4
   end
 
   def edit
