@@ -47,6 +47,7 @@ class UsersController < ApplicationController
       @score = @score + 10
     end
     @a_score = 140 - @score
+    @percent = @score / 1.4
   end
 
 
