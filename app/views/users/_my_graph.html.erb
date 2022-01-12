@@ -1,0 +1,29 @@
+      <html lang="ja">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+        <div class="doughnut-graph" >
+          <canvas id="myDoughnutChart"></canvas>
+        </div>
+
+          <script>
+            var ctx = document.getElementById("myDoughnutChart");
+            var score = <%== @score %>, a_score = <%== @a_score %>;
+            var myDoughnutChart= new Chart(ctx, {
+              type: 'doughnut',
+              data: {
+                labels: ["入力済み", "未入力"],
+                datasets: [{
+                    backgroundColor: [
+                        "olivedrab",
+                        "#CCCC99",
+                    ],
+                    data: [score, a_score]
+                }]
+              },
+            });
+          </script>
+      </html>
+
+      <div class="graph-text">
+        <%= @user.nickname+"さんのプロフィール入力率は、"%><%=@percent.round%><%= "%です" %>
+      </div>
