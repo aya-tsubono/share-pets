@@ -36,6 +36,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path if @pet.user_id != current_user.id
     @pet.destroy
     redirect_to root_path
   end
