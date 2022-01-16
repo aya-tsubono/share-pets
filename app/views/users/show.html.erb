@@ -75,6 +75,11 @@
       </li>
       <% end %>
       </div>
+      <div class="no-post-text">
+        <% if @user.pets.length == 0 %>
+          <%= "まだ投稿がありません" %>
+        <% end %>
+      </div>
     </div>
     <%# //投稿一覧 %>
     
