@@ -24,6 +24,11 @@
           <%= link_to room.room_name, room_messages_path(room) %>
         </div>
         <% end %>
+        <div class="no-room-text">
+          <% if @room.length == 0 %>
+            <%= "まだルームがありません" %>
+          <% end %>
+        </div>
       </div>
     <% end %>
     <%# //ルーム一覧 %>
