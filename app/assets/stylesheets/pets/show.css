@@ -59,26 +59,33 @@
 /* 編集削除ボタン */
 .pet-user-btn {
   font-family: 'Amatic SC', cursive;
+  font-size: 28px;
   margin: 3vh 0;
+  display: flex;
 }
 
 .edit-btn {
   text-align: center;
   background-color: olivedrab;
-  font-size: 28px;
   color: #FFF;
   margin: 20px 1vh;
   padding: 1.5vh 8vw;
 }
 
+.delete-text {
+  margin: 20px 1vh;
+  text-align: center;
+  font-size: 16px;
+}
+
 .destroy-btn {
   background-color: lightgray;
   text-align: center;
-  font-size: 28px;
   color: black;
   margin: 20px 0px;
   padding: 1.5vh 8vw;
 }
+
 /* //編集削除ボタン */
 
 /* detail */
