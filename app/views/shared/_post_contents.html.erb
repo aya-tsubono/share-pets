@@ -1,0 +1,24 @@
+<div class='room-form-field'>
+  <div class='room-form-field-center'>
+    <h2 class='room-pet-title'>
+      <%= @pet.title %>
+    </h2>
+      <%= image_tag @pet.images[0], class: "pet-img" %>
+      <div class='room-pet-info'>
+        名前 : <%= @pet.animal_name %> ちゃん<br>
+        年齢 : <%= @pet.age.name %><br>
+        種類 : <%= @pet.breed %><br>
+        性別 : <%= @pet.sex.name %><br>
+        投稿者 : <%= @pet.user.nickname %> さん
+      </div>
+  </div>
+</div>
+
+<div class='room-form-field'>
+  <div class='room-form-field-center'>
+    <div class='room-create-text'>
+      <h2>内容を確認し、問題がなければ下記ボタンを押してください</h2>
+    </div>
+  </div>
+</div>
+
