@@ -1,0 +1,54 @@
+
+.pet-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.pet-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+.pet-img-content {
+  position: relative;
+}
+
+.pet-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.sold-out {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  background-color: darkorange;
+}
+
+.sold-out>span {
+  color: #FFF;
+  font-size: 30px;
+  font: bold;
+}
+
+.pet-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.pet-title {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.pet-name {
+  font-size: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
