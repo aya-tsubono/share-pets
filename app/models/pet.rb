@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
   belongs_to :user
   has_many :rooms
-  has_one :adoption
+  has_one :adoption, dependent: :destroy
   has_many_attached :images
 
   validates :title,       presence: true, length: { maximum: 50 }

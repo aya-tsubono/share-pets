@@ -29,8 +29,16 @@
     <%# 編集削除ボタン %>
     <div class="pet-user-btn">
       <% if user_signed_in? && (current_user.id == @pet.user_id) && @pet.adoption.blank? %>
-      <%= link_to "edit", edit_pet_path, method: :get, class: "edit-btn" %>
-      <%= link_to "delete", pet_path, method: :delete, class:"destroy-btn" %>
+        <%= link_to "edit", edit_pet_path, method: :get, class: "edit-btn" %>
+        <% if @pet.rooms.present?%>
+          <div class="delete-text">
+            <%= "※里親申請のルームが存在しない場合のみ、" %><br>
+            <%= "deleteボタンが表示されます。" %>
+          </div>
+        <% end %>
+        <% if @pet.rooms.blank? %>
+        <%= link_to "delete", pet_path, method: :delete, class:"destroy-btn" %>
+        <% end %>
       <% end %>
     </div>
     <%# //編集削除ボタン %>

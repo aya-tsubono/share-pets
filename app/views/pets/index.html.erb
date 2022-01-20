@@ -6,7 +6,7 @@
     <div class='main-name'>
       <span>share pets</span>
     </div>
- <%# /メイン画像 %>
+ <%# //メイン画像 %>
 
  <%# 投稿一覧 %>
   <div class='item-contents'>
@@ -14,32 +14,7 @@
     <ul class='pet-lists'>
     
       <% if @pets.length > 0 %>
-      <% @pets.each do |pet| %> 
-      <li class='list'>
-      <%= link_to pet_path(pet.id) do %>
-        <div class='pet-img-content'>
-          <%= image_tag pet.images[0], class: "pet-img" %>
-          <% if pet.adoption.present? %>
-          <div class='sold-out'>
-            <span>譲渡決定!!</span>
-          </div>
-          <% end %>
-        </div>
-        <div class='pet-info'>
-          <h3 class='pet-title'>
-            <%= pet.title %>
-          </h3>
-          <div class='pet-name'>
-            <span><%= pet.animal_name %> ちゃん( <%= pet.age.name %> )<br>
-            <%= pet.breed %> / <%= pet.sex.name %> </span>
-          </div>
-          <div class='user-name'>
-            投稿者 <%= link_to pet.user.nickname, user_path(pet.user_id) %>
-          </div>
-        </div>
-      <% end %>
-      </li>
-      <% end %>
+        <%= render "list", pet: @pets %>
       <% end %>
     
       <% if @pets.length == 0 %>

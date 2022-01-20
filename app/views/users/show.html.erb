@@ -24,6 +24,11 @@
           <%= link_to room.room_name, room_messages_path(room) %>
         </div>
         <% end %>
+        <div class="no-room-text">
+          <% if @room.length == 0 %>
+            <%= "まだルームがありません" %>
+          <% end %>
+        </div>
       </div>
     <% end %>
     <%# //ルーム一覧 %>
@@ -45,30 +50,15 @@
       <h2 class="page-heading">
         <%= @user.nickname+"'s Posts List"%>
       </h2>
+
       <div class="user-pet">
-        <% @pets.each do |pet| %> 
-        <li class='list'>
-        <%= link_to pet_path(pet) do %>
-        <div class='pet-img-content'>
-          <%= image_tag pet.images[0], class: "pet-img" %>
-          <% if pet.adoption.present? %>
-          <div class='sold-out'>
-            <span>里親決定!!</span>
-          </div>
-          <% end %>
-        </div>
-        <div class='pet-info'>
-          <h3 class='pet-title'>
-            <%= pet.title %>
-          </h3>
-          <div class='pet-name'>
-            <span><%= pet.animal_name %> ちゃん<br>
-            <%= pet.breed %> / <%= pet.sex.name %> / <%= pet.age.name %></span>
-          </div>
-        </div>
-      <% end %>
-      </li>
-      <% end %>
+        <%= render "pets/list", pet: @pets %>
+      </div>
+      
+      <div class="no-post-text">
+        <% if @user.pets.length == 0 %>
+          <%= "まだ投稿がありません" %>
+        <% end %>
       </div>
     </div>
     <%# //投稿一覧 %>

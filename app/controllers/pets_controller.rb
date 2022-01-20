@@ -36,6 +36,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path if @pet.user_id != current_user.id
     @pet.destroy
     redirect_to root_path
   end
@@ -52,8 +53,9 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:title, :animal_name, :animal_category_id, :breed, :sex_id, :age_id, :weight_id, :status, :prefecture_id, :vaccination_id, :castration_id,
-                                :area, :reason, :charge, :condition, { images: [] }).merge(user_id: current_user.id)
+    params.require(:pet).permit(:title, :animal_name, :animal_category_id, :breed, :sex_id, :age_id, :weight_id, :status,
+                                :prefecture_id, :vaccination_id, :castration_id, :area, :reason, :charge, :condition,
+                                { images: [] }).merge(user_id: current_user.id)
   end
 
   def set_pet

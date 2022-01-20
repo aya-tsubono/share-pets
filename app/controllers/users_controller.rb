@@ -39,8 +39,9 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user_detail).permit(:prefecture_id, :household_id, :experience, :have_animal, :pet_friendly_id, :desired_animal,
-                                        :economic_status, :deposit, :have_surgery_id, :get_vaccine_id, :indoor_outdoor, :visit_id, :consent_id, :remarks).merge(user_id: current_user.id)
+    params.require(:user_detail).permit(:prefecture_id, :household_id, :experience, :have_animal, :pet_friendly_id,
+                                        :desired_animal, :economic_status, :deposit, :have_surgery_id, :get_vaccine_id,
+                                        :indoor_outdoor, :visit_id, :consent_id, :remarks).merge(user_id: current_user.id)
   end
 
   def set_user
