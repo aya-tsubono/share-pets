@@ -15,6 +15,7 @@
             <%= link_to "里親承認", new_pet_adoption_path(pet_id: @pet.id, user_id: @user), class: "adopt-btn" %>
           <% end %>
           <% if user_signed_in? && (current_user.id == @pet.user_id) %>
+            <%= link_to "Roomの削除", room_path(@room), class: "adopt-btn" %>
             <%= link_to "申請者のProfile", user_path(@user), class: "prof-btn" %>
           <% end %>
           <% if user_signed_in? && (current_user.id != @pet.user_id) %>
