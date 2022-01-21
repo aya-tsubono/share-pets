@@ -16,9 +16,11 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path if @pet.user_id != current_user.id
+    @room = Room.find(params[:id])
+    if @room.user_ids != current_user.id
+      redirect_to root_path 
+    end
     @room.destroy
-    redirect_to root_path
   end
 
   private
