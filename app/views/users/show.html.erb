@@ -37,7 +37,7 @@
     <div class="user-wrapper">
       <h2 class="page-heading">
         <%= @user.nickname+"'s Profile" %>
-        <% if current_user.id == @user.id %>
+        <% if user_signed_in? && (current_user.id == @user.id) %>
         <%= link_to "edit", edit_user_path, class:"edit-user-btn" %>
         <% end %>
       </h2>
